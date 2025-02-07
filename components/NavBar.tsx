@@ -74,7 +74,6 @@ function Navbar({ className }: { className?: string }) {
         </MenuItem>
         </div>
         <div className="flex items-center">
-          <ModeToggle />
           <Button className="rounded-2xl">Offerte aanvragen</Button>
         </div>
         </div>

@@ -5,39 +5,59 @@ import Trustpilot from "@/public/trustpilot.png";
 import Image from "next/image";
 
 export default function Hero() {
-  const words = ["converteerd", "gevonden wordt", "Uniek is", "super snel is"];
+  const words = ["converteert", "gevonden wordt", "uniek is", "super snel is"];
 
   return (
-    <div className="bg-white text-black dark:bg-black dark:text-white min-h-screen flex flex-col justify-center items-center text-center transition-colors duration-300">
-      <div className="mb-12">
-        <span className="bg-black text-white dark:bg-white dark:text-black rounded-full px-4 py-1 text-xl font-medium flex justify-center items-center">
-          Beoordeeld met 4.9 op  <Image src={Trustpilot} alt="Trustpilot" width={120} height={10} />
-        </span>
-      </div>
-      <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-relaxed">
-  Website laten maken? <br />
-  Wij zorgen dat jouw website <br />
-  <span className="flex justify-center items-center">
-    <FlipWords words={words} />
-  </span>
-</h1>
+    <div className="relative bg-white text-black dark:bg-black dark:text-white min-h-screen flex items-center justify-center text-center overflow-hidden transition-colors duration-300">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/herobg1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      <p className="text-gray-700 dark:text-gray-300 mb-8 px-4 max-w-2xl text-lg">
-        Wij bij SpeedAgency bieden SEO, Website, Webshops, SEA en Branding
-      </p>
-      <div className="flex space-x-4">
-        <Link
-          href="/demo"
-          className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200"
-        >
-          Portfolio bekijken
-        </Link>
-        <Link
-          href="/signup"
-          className="bg-transparent border-2 border-black text-black dark:border-white dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-800"
-        >
-          Bel afspraak inplannen
-        </Link>
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-[1]"></div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="mb-12">
+        <span className="bg-black text-white dark:bg-white dark:text-black rounded-full px-2 py-1 text-lg font-medium inline-flex items-center max-w-max gap-4">
+  Beoordeeld met 4.9 op{" "}
+  <Image src={Trustpilot} alt="Trustpilot" width={80} height={10} />
+</span>
+
+        </div>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-relaxed">
+          Website laten maken? <br />
+          Wij zorgen dat jouw website <br />
+          <span className="flex justify-center items-center">
+            <FlipWords words={words} />
+          </span>
+        </h1>
+
+        <p className="text-gray-700 dark:text-gray-300 mb-8 px-4 text-lg">
+          Wij bij SpeedAgency bieden SEO, Website, Webshops, SEA en Branding
+        </p>
+        <div className="flex gap-4 justify-center">
+          <Link
+            href="/demo"
+            className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200"
+          >
+            Portfolio bekijken
+          </Link>
+          <Link
+            href="/signup"
+            className="bg-transparent border-2 border-black text-black dark:border-white dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-800"
+          >
+            Bel afspraak inplannen
+          </Link>
+        </div>
       </div>
     </div>
   );
