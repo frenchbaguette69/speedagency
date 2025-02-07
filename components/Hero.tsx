@@ -26,14 +26,14 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10">
-        <div className="mb-12">
+        <div className="mb-6  md:mb-12">
         <span className="bg-black text-white dark:bg-white dark:text-black rounded-full px-2 py-1 text-lg font-medium inline-flex items-center max-w-max gap-4">
   Beoordeeld met 4.9 op{" "}
   <Image src={Trustpilot} alt="Trustpilot" width={80} height={10} />
 </span>
 
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-relaxed">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-snug">
           Website laten maken? <br />
           Wij zorgen dat jouw website <br />
           <span className="flex justify-center items-center">
@@ -41,21 +41,21 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="text-gray-700 dark:text-gray-300 mb-8 px-4 text-lg">
-          Wij bij SpeedAgency bieden SEO, Website, Webshops, SEA en Branding
+        <p className="text-gray-700 dark:text-gray-300 mb-8 px-4 text-base max-w-2xl mx-auto">
+          Een simpele website via wordpress werkte 10 jaar geleden al niet meer. Ben je opzoek om een website te laten maken? Wij bij SpeedAgency bieden SEO, Website, Webshops, SEA en Branding
         </p>
         <div className="flex gap-4 justify-center">
           <Link
             href="/demo"
-            className="bg-black text-white dark:bg-white dark:text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200"
+            className="bg-black text-white dark:bg-white dark:text-black px-5 py-3 items-center justify-center rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-200"
           >
             Portfolio bekijken
           </Link>
           <Link
             href="/signup"
-            className="bg-transparent border-2 border-black text-black dark:border-white dark:text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-800"
+            className="bg-transparent border-2 border-black text-black dark:border-white dark:text-white px-5 py-3 rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-800"
           >
-            Bel afspraak inplannen
+            Whatsapp contact
           </Link>
         </div>
       </div>

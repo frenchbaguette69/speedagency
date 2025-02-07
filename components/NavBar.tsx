@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Banana from "@/public/logospeedagency.png"
-import { ModeToggle } from "./theme-toggle";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { Menu as HamburgerIcon } from "lucide-react";
 
 export function NavbarTop() {
   return (
@@ -27,7 +27,7 @@ function Navbar({ className }: { className?: string }) {
           <Image src={Banana} alt="logo" width={30} height={30} />
           <h2 className="font-bold text-xl">SpeedAgency</h2>
         </div>
-      <div className="flex gap-8 items-center justify-center">
+      <div className="gap-8 items-center justify-center hidden md:flex">
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
@@ -73,8 +73,13 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         </div>
-        <div className="flex items-center">
+        <div>
+        <div className="hidden md:flex items-center">
           <Button className="rounded-2xl">Offerte aanvragen</Button>
+        </div>
+        <div className="md:hidden">
+        <HamburgerIcon size={32} className="cursor-pointer" />
+        </div>
         </div>
         </div>
       </Menu>
