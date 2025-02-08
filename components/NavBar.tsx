@@ -4,7 +4,7 @@ import { IconChevronDown, IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ModeToggle } from "./theme-toggle";
 
 export function NavbarWithChildren() {
@@ -83,19 +83,25 @@ const Navbar = () => {
 
 const DesktopNav = ({ navItems }: any) => {
   const [active, setActive] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <motion.div
-      className={cn(
-        "hidden lg:flex flex-row self-start bg-white dark:bg-neutral-950 items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full mt-5",
-        "sticky top-40 inset-x-0"
-      )}
-      style={{
-        position: "absolute", // Maak de Navbar position absolute
-        top: 0,
-        left: 0,
-        right: 0,
-      }}
-    >
+  className={cn(
+    "hidden lg:flex flex-row bg-white dark:bg-neutral-950 items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full shadow-2xl backdrop-blur-md transition-all duration-300",
+    isScrolled ? "fixed top-0 left-0 right-0" : "absolute top-5 left-0 right-0"
+  )}
+>
+
       <Logo />
       <div className="lg:flex flex-row flex-1 hidden items-center justify-center space-x-2 lg:space-x-2 text-sm text-zinc-600 font-medium hover:text-zinc-800 transition duration-200">
         <Menu setActive={setActive}>
@@ -170,19 +176,29 @@ const DesktopNav = ({ navItems }: any) => {
 
 const MobileNav = ({ navItems }: any) => {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <>
-      <motion.div
-        animate={{
-          borderRadius: open ? "4px" : "2rem",
-        }}
-        key={String(open)}
-        className="flex fixed flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-neutral-950  max-w-screen-md  mx-auto px-4 py-2 mt-4 z-50"
-        
-      >
+    <motion.div
+      animate={{ borderRadius: open ? "4px" : "2rem" }}
+      className={cn(
+        "flex flex-col lg:hidden w-full justify-between items-center bg-white dark:bg-neutral-950 max-w-screen-md mx-auto px-4 py-2 z-50 transition-all duration-300",
+        isScrolled ? "fixed top-0 left-0 right-0 shadow-2xl backdrop-blur-md" : "absolute top-5 left-0 right-0"
+      )}
+    >
         <div className="flex flex-row justify-between items-center w-full">
           <Logo />
+          <div className="flex justify-center items-center">
+            <ModeToggle />
           {open ? (
             <IconX
               className="text-black dark:text-white"
@@ -194,6 +210,7 @@ const MobileNav = ({ navItems }: any) => {
               onClick={() => setOpen(!open)}
             />
           )}
+          </div>
         </div>
 
         <AnimatePresence>
@@ -229,7 +246,6 @@ const MobileNav = ({ navItems }: any) => {
           )}
         </AnimatePresence>
       </motion.div>
-    </>
   );
 };
 
