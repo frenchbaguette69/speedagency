@@ -1,11 +1,18 @@
+import { Bento } from "@/components/Bento";
 import Hero from "@/components/Hero";
-import { NavbarTop } from "@/components/NavBar";
+import { NavbarWithChildren } from "@/components/NavBar";
+import { StatsWithGridBackground } from "@/components/stats";
+
 
 export default function Home() {
   return (
     <div className="">
-      <NavbarTop />
+      <NavbarWithChildren />
       <Hero />
+      <StatsWithGridBackground />
+      <Bento />
+      <div>
+      </div>
     </div>
   );
 }
