@@ -42,7 +42,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-gray-300 dark:text-gray-300 mb-8 px-4 text-base max-w-2xl mx-auto">
-          Een simpele website via wordpress werkte 10 jaar geleden al niet meer. Ben je opzoek om een <strong>website te laten maken</strong> ? Wij bij SpeedAgency bieden SEO, Website, Webshops, SEA en Branding
+          Een simpele website via wordpress werkte 10 jaar geleden al niet meer. Ben je op zoek om een <strong>website te laten maken</strong> ? Wij bij SpeedAgency bieden SEO, Website, Webshops, SEA en Branding
         </p>
         <div className="flex gap-4 justify-center">
           <Link

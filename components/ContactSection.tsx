@@ -99,7 +99,7 @@ export function ContactSection() {
           <textarea
             id="message"
             rows={5}
-            placeholder="Ik ben opzoek naar een website, webshops, SEO of SEA adwords"
+            placeholder="Ik ben op zoek naar een website, webshops, SEO of SEA adwords"
             className="w-full rounded-md border border-transparent bg-white pl-4 pt-4 text-sm text-neutral-700 placeholder-neutral-500 shadow-input outline-none focus:outline-none focus:ring-2 focus:ring-neutral-800 active:outline-none dark:border-neutral-800 dark:bg-neutral-800 dark:text-white"
           />
         </div>
