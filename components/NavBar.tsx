@@ -97,7 +97,7 @@ const DesktopNav = ({ navItems }: any) => {
   return (
     <motion.div
   className={cn(
-    "hidden lg:flex flex-row bg-white dark:bg-neutral-950 items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full shadow-2xl backdrop-blur-md transition-all duration-300",
+    "hidden lg:flex flex-row bg-white dark:bg-neutral-900 items-center justify-between py-2 max-w-7xl mx-auto px-4 rounded-full relative z-[60] w-full shadow-2xl backdrop-blur-md transition-all duration-300",
     isScrolled ? "fixed top-0 left-0 right-0" : "absolute top-5 left-0 right-0"
   )}
 >
@@ -369,7 +369,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full dark:bg-neutral-950  bg-white flex justify-center gap-6 px-4 py-3 "
+      className="relative rounded-full dark:bg-neutral-900  bg-white flex justify-center gap-6 px-4 py-3 "
     >
       {children}
     </nav>

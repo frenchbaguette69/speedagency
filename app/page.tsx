@@ -69,7 +69,6 @@ export default function Home() {
 
   return (
     <div className="">
-      <NavbarWithChildren />
       <Hero />
       <StatsWithGridBackground />
       <div className="container mx-auto max-w-7xl">
