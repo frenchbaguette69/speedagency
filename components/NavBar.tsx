@@ -22,15 +22,15 @@ const Navbar = () => {
       link: "#",
       children: [
         {
-          name: "Web Development",
+          name: "Website laten maken",
           link: "#",
         },
         {
-          name: "Interface Design",
+          name: "Webshop laten maken",
           link: "#",
         },
         {
-          name: "Search Engine Optimization",
+          name: "Mobiele app laten maken",
           link: "#",
         },
         {
@@ -107,9 +107,9 @@ const DesktopNav = ({ navItems }: any) => {
         <Menu setActive={setActive}>
           <MenuItem setActive={setActive} active={active} item="Waarom kiezen voor ons">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/#">Web Development</HoveredLink>
-              <HoveredLink href="/#">Interface Design</HoveredLink>
-              <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+              <HoveredLink href="/#">Website laten maken</HoveredLink>
+              <HoveredLink href="/#">Webshop laten maken</HoveredLink>
+              <HoveredLink href="/seo">Mobiele app laten maken</HoveredLink>
               <HoveredLink href="/branding">Branding</HoveredLink>
             </div>
           </MenuItem>
