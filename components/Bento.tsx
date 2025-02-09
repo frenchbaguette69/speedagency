@@ -50,17 +50,7 @@ export function Bento() {
           </CardSkeletonBody>
         </Card>
 
-        <Card className="flex flex-col justify-between md:col-span-2">
-          <CardContent className="h-40">
-            <CardTitle>Overal in google gevonden worden</CardTitle>
-            <CardDescription>
-              Met onze SEO en snelheid geoptimaliseerde website. Wordt jij gevonden in google. Dit doen we zowel eenmalig bij het bouwen en ook maandelijks als onderhoud.
-            </CardDescription>
-          </CardContent>
-          <CardSkeletonBody>
-            <SkeletonTwo />
-          </CardSkeletonBody>
-        </Card>
+
         <Card className="flex flex-col justify-between md:col-span-3">
           <CardContent className="h-40">
             <CardTitle>Hogere conversie en meer klanten op jouw website?</CardTitle>

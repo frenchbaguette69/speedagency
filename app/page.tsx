@@ -10,6 +10,7 @@ export default function Home() {
       <NavbarWithChildren />
       <Hero />
       <StatsWithGridBackground />
+      <Bento />
       <div>
       </div>
     </div>
