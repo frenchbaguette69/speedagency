@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import createGlobe from "cobe";
+import { useInView } from "react-intersection-observer";
 
 export function Bento() {
   return (
@@ -50,7 +51,17 @@ export function Bento() {
           </CardSkeletonBody>
         </Card>
 
-
+        <Card className="flex flex-col justify-between md:col-span-2">
+          <CardContent className="h-40">
+            <CardTitle>Overal in google gevonden worden</CardTitle>
+            <CardDescription>
+              Met onze SEO en snelheid geoptimaliseerde website. Wordt jij gevonden in google. Dit doen we zowel eenmalig bij het bouwen en ook maandelijks als onderhoud.
+            </CardDescription>
+          </CardContent>
+          <CardSkeletonBody>
+            <SkeletonTwo />
+          </CardSkeletonBody>
+        </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
           <CardContent className="h-40">
             <CardTitle>Hogere conversie en meer klanten op jouw website?</CardTitle>
@@ -326,75 +337,82 @@ const AWSLogo = () => {
 };
 
 export const SkeletonTwo = () => {
-  return (
-    <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
-      <Globe className="absolute -right-0 md:-right-10 -bottom-80 md:-bottom-72" />
-    </div>
-  );
-};
-
-export const Globe = ({ className }: { className?: string }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    let phi = 0;
-
-    if (!canvasRef.current) return;
-
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: 600 * 2,
-      height: 600 * 2,
-      phi: 0,
-      theta: 0,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.0, 0.2, 0.6],
-      markerColor: [0, 0, 1],
-      glowColor: [1, 1, 1],
-      markers: [
-        // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
-      ],
-      onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
-        state.phi = phi;
-        phi += 0.01;
-      },
-    });
-
-    return () => {
-      globe.destroy();
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
-      className={className}
-    />
-  );
-};
-
-// Card structure
-const CardSkeletonBody = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("overflow-hidden relative w-full h-full", className)}>
-      {children}
-    </div>
-  );
-};
+    return (
+      <div className="h-60 md:h-60 flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
+        <LazyGlobe className="absolute -right-0 md:-right-10 -bottom-80 md:-bottom-72" />
+      </div>
+    );
+  };
+  
+  const LazyGlobe = ({ className }: { className?: string }) => {
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  
+    return (
+      <div ref={ref}>
+        {inView && <Globe className={className} />}
+      </div>
+    );
+  };
+  
+  export const Globe = ({ className }: { className?: string }) => {
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+    useEffect(() => {
+      let phi = 0;
+  
+      if (!canvasRef.current) return;
+  
+      const globe = createGlobe(canvasRef.current, {
+        devicePixelRatio: 2,
+        width: 600 * 2,
+        height: 600 * 2,
+        phi: 0,
+        theta: 0,
+        dark: 1,
+        diffuse: 1.2,
+        mapSamples: 16000,
+        mapBrightness: 6,
+        baseColor: [0.0, 0.2, 0.6],
+        markerColor: [0, 0, 1],
+        glowColor: [1, 1, 1],
+        markers: [
+          { location: [37.7595, -122.4367], size: 0.03 },
+          { location: [40.7128, -74.006], size: 0.1 },
+        ],
+        onRender: (state) => {
+          state.phi = phi;
+          phi += 0.01;
+        },
+      });
+  
+      return () => {
+        globe.destroy();
+      };
+    }, []);
+  
+    return (
+      <canvas
+        ref={canvasRef}
+        style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+        className={className}
+      />
+    );
+  };
+  
+  // Card structure
+  const CardSkeletonBody = ({
+    children,
+    className,
+  }: {
+    children: React.ReactNode;
+    className?: string;
+  }) => {
+    return (
+      <div className={`overflow-hidden relative w-full h-full ${className}`}>
+        {children}
+      </div>
+    );
+  };
 
 const CardContent = ({
   children,
