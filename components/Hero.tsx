@@ -10,7 +10,16 @@ export default function Hero() {
   return (
     <div className="relative bg-white text-black dark:bg-black dark:text-white min-h-screen flex items-center justify-center text-center overflow-hidden transition-colors duration-300">
       {/* Video Background */}
-
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/herobg1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-[1]"></div>

@@ -9,7 +9,7 @@ export default function Home() {
     <div className="">
       <NavbarWithChildren />
       <Hero />
-      <StatsWithGridBackground />
+      
       <Bento />
       <div>
       </div>
