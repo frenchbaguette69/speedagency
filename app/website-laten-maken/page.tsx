@@ -12,6 +12,9 @@ import { FaRocket, FaSearch, FaCode, FaMobile } from "react-icons/fa";
 import { DevelopmentProcess } from "@/components/DevelopmentProcess";
 import { OtherServices } from "@/components/OtherServices";
 import { ImportanceOfWebsite } from "@/components/ImportanceOfWebsite";
+import { BusinessCustomWebsite } from "@/components/BusinessCustomWebsite";
+import { NextJsOverWordPress } from "@/components/NextJsOverWordpress";
+import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 
 // Metadata voor de pagina
 export const metadata: Metadata = {
@@ -77,6 +80,9 @@ return (
     <DevelopmentProcess />
     <OtherServices />
     <ImportanceOfWebsite />
+    <BusinessCustomWebsite />
+    <NextJsOverWordPress />
+    <ProjectsShowcase />
   </div>
   );
 };
