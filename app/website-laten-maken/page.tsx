@@ -15,6 +15,10 @@ import { ImportanceOfWebsite } from "@/components/ImportanceOfWebsite";
 import { BusinessCustomWebsite } from "@/components/BusinessCustomWebsite";
 import { NextJsOverWordPress } from "@/components/NextJsOverWordpress";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
+import { USPSection } from "@/components/USPSection";
+import { BestChoiceSection } from "@/components/BestChoiceSection";
+import { LatestBlogPosts } from "@/components/LatestBlogPosts";
+import { FrequentlyAskedQuestions } from "@/components/FrequentlyAskedQuestion";
 
 // Metadata voor de pagina
 export const metadata: Metadata = {
@@ -83,6 +87,10 @@ return (
     <BusinessCustomWebsite />
     <NextJsOverWordPress />
     <ProjectsShowcase />
+    <USPSection />
+    <BestChoiceSection />
+    <LatestBlogPosts />
+    <FrequentlyAskedQuestions />
   </div>
   );
 };
