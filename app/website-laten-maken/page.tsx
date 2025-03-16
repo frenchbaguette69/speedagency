@@ -19,6 +19,7 @@ import { USPSection } from "@/components/USPSection";
 import { BestChoiceSection } from "@/components/BestChoiceSection";
 import { LatestBlogPosts } from "@/components/LatestBlogPosts";
 import { FrequentlyAskedQuestions } from "@/components/FrequentlyAskedQuestion";
+import { CostDescriptionSection } from "@/components/CostDescriptionSection";
 
 // Metadata voor de pagina
 export const metadata: Metadata = {
@@ -91,6 +92,7 @@ return (
     <BestChoiceSection />
     <LatestBlogPosts />
     <FrequentlyAskedQuestions />
+    <CostDescriptionSection />
   </div>
   );
 };
