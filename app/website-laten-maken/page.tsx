@@ -1,5 +1,3 @@
-//My Whatsapp Number: +8801754333799
-
 import { HeroSubPage } from "@/components/HeroSubPage";
 import { Checklist } from "@/components/Checklist";
 
