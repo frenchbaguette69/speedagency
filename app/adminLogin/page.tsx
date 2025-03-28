@@ -16,7 +16,6 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      // Add your authentication logic here
       if (formData.email === 'admin@example.com' && formData.password === 'admin123') {
         localStorage.setItem('isAuthenticated', 'true')
         router.push('/adminPanel')
