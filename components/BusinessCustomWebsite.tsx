@@ -62,7 +62,7 @@ export const BusinessCustomWebsite = () => {
   ];
 
   return (
-    <section className="py-20 overflow-hidden bg-gradient-to-b from-indigo-50 to-white dark:from-zinc-900 dark:to-zinc-800">
+    <section className="py-20 overflow-hidden bg-gradient-to-b from-[#f0fbff] to-white dark:from-zinc-900 dark:to-zinc-800">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -75,7 +75,7 @@ export const BusinessCustomWebsite = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#54eff6] to-[#4cfea6] bg-clip-text text-transparent">
               Websites Met Impact
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto">
@@ -95,7 +95,9 @@ export const BusinessCustomWebsite = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center px-6 py-3 rounded-full text-sm sm:text-base font-medium transition ${
                     activeTab === tab.id
-                      ? "bg-indigo-600 text-white shadow-md" 
+                      ? tab.id === "custom" 
+                        ? "bg-[#54eff6] text-zinc-800 shadow-md" 
+                        : "bg-[#4cfea6] text-zinc-800 shadow-md"
                       : "text-zinc-700 dark:text-zinc-300 hover:bg-gray-200 dark:hover:bg-zinc-600"
                   }`}
                 >
@@ -110,7 +112,7 @@ export const BusinessCustomWebsite = () => {
         {/* Main content area with 3D perspective effect */}
         <div className="relative">
           <motion.div
-            key={activeTab} // Force re-render on tab change
+            key={activeTab}
             initial={{ opacity: 0, rotateX: 10, y: 10 }}
             animate={{ opacity: 1, rotateX: 0, y: 0 }}
             exit={{ opacity: 0, rotateX: -10, y: 10 }}
@@ -147,7 +149,7 @@ export const BusinessCustomWebsite = () => {
                     duration: 6,
                     ease: "easeInOut"
                   }}
-                  className="hidden md:block absolute -top-6 -right-6 w-28 h-28 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg -rotate-6"
+                  className="hidden md:block absolute -top-6 -right-6 w-28 h-28 bg-gradient-to-br from-[#54eff6] to-[#4cfea6] rounded-2xl shadow-lg -rotate-6"
                 />
                 <motion.div 
                   animate={{ 
@@ -160,7 +162,7 @@ export const BusinessCustomWebsite = () => {
                     ease: "easeInOut",
                     delay: 1
                   }}
-                  className="hidden md:block absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-tr from-indigo-300 to-blue-400 dark:from-indigo-600 dark:to-blue-700 rounded-full shadow-lg"
+                  className="hidden md:block absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-tr from-[#f9fa4c] to-[#4cfea6] dark:from-[#f9fa4c] dark:to-[#4cfea6] rounded-full shadow-lg"
                 />
               </div>
             </div>
@@ -187,7 +189,7 @@ export const BusinessCustomWebsite = () => {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <span className="text-indigo-600 dark:text-indigo-400 mt-1 flex-shrink-0">
+                    <span className="mt-1 flex-shrink-0" style={{ color: index % 3 === 0 ? "#54eff6" : index % 3 === 1 ? "#4cfea6" : "#f9fa4c" }}>
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -201,7 +203,10 @@ export const BusinessCustomWebsite = () => {
                 <motion.button 
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-md transition-colors"
+                  className="flex items-center gap-2 px-6 py-3 rounded-full text-zinc-800 font-medium shadow-md transition-colors"
+                  style={{ 
+                    backgroundColor: activeTab === "custom" ? "#54eff6" : "#4cfea6" 
+                  }}
                 >
                   {activeTab === "custom" ? "Vraag een custom website aan" : "Start uw business website"} 
                   <FaArrowRight />
@@ -225,7 +230,8 @@ export const BusinessCustomWebsite = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-medium shadow-lg transition-all"
+              className="px-8 py-3 rounded-full text-zinc-800 font-medium shadow-lg transition-all"
+              style={{ background: "linear-gradient(to right, #54eff6, #4cfea6)" }}
             >
               Neem contact op voor een vrijblijvend gesprek
             </motion.button>

@@ -9,32 +9,36 @@ import { FaLaptop, FaShoppingCart, FaSearch, FaGoogle } from "react-icons/fa";
 export const OtherServices = () => {
   const services = [
     {
-      icon: <FaLaptop className="text-4xl text-indigo-600 dark:text-indigo-400 mb-4" />,
+      icon: <FaLaptop className="text-4xl mb-4" style={{ color: "#54eff6" }} />,
       title: "Website Ontwikkeling",
       description: "Custom websites gebouwd met Next.js voor optimale snelheid, SEO en gebruikservaring.",
       link: "/website-laten-maken",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+      color: "#54eff6" // Cyan
     },
     {
-      icon: <FaShoppingCart className="text-4xl text-indigo-600 dark:text-indigo-400 mb-4" />,
+      icon: <FaShoppingCart className="text-4xl mb-4" style={{ color: "#4cfea6" }} />,
       title: "Webshop Ontwikkeling",
       description: "Professionele e-commerce oplossingen die verkopen stimuleren en eenvoudig te beheren zijn.",
       link: "/webshop-laten-maken",
-      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      color: "#4cfea6" // Green
     },
     {
-      icon: <FaSearch className="text-4xl text-indigo-600 dark:text-indigo-400 mb-4" />,
+      icon: <FaSearch className="text-4xl mb-4" style={{ color: "#f9fa4c" }} />,
       title: "SEO Optimalisatie",
       description: "Doelgerichte SEO-strategieën om hoger te scoren in Google en meer organisch verkeer te genereren.",
       link: "/seo-optimalisatie",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      color: "#f9fa4c" // Yellow
     },
     {
-      icon: <FaGoogle className="text-4xl text-indigo-600 dark:text-indigo-400 mb-4" />,
+      icon: <FaGoogle className="text-4xl mb-4" style={{ color: "#54eff6" }} />,
       title: "Google Ads",
       description: "Effectieve advertentiecampagnes die direct resultaat opleveren en uw ROI maximaliseren.",
       link: "/google-ads",
-      image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2027&q=80"
+      image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2027&q=80",
+      color: "#54eff6" // Cyan (repeating first color)
     }
   ];
 
@@ -59,8 +63,9 @@ export const OtherServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative bg-white dark:bg-zinc-800 rounded-xl shadow-md overflow-hidden"
+              style={{ borderTop: `4px solid ${service.color}` }}
             >
-              {/* Service image with overlay - reduced overlay opacity */}
+              {/* Service image with overlay - color-coded */}
               <div className="h-48 overflow-hidden relative">
                 <Image
                   src={service.image}
@@ -69,7 +74,10 @@ export const OtherServices = () => {
                   height={300}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 group-hover:bg-indigo-800/30 transition-colors duration-300"></div>
+                <div 
+                  className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-30"
+                  style={{ backgroundColor: service.color }}
+                ></div>
               </div>
               
               {/* Service content */}
@@ -81,7 +89,11 @@ export const OtherServices = () => {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="block text-center py-2 px-6 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors font-medium"
+                    className="block text-center py-2 px-6 rounded-full text-zinc-800 font-medium transition-all hover:shadow-md"
+                    style={{ 
+                      backgroundColor: service.color,
+                      boxShadow: `0 4px 14px 0 ${service.color}40`
+                    }}
                   >
                     Meer informatie
                   </motion.div>
@@ -104,7 +116,11 @@ export const OtherServices = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 font-medium text-white shadow-lg transition-colors"
+              className="px-8 py-3 rounded-full font-medium text-zinc-800 shadow-lg transition-all"
+              style={{ 
+                background: "linear-gradient(to right, #54eff6, #4cfea6)",
+                boxShadow: "0 4px 14px 0 rgba(84, 239, 246, 0.3)"
+              }}
             >
               Bekijk al onze diensten
             </motion.button>

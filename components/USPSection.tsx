@@ -22,7 +22,7 @@ export const USPSection = () => {
       title: "Bliksemsnelle Websites",
       description: "Onze Next.js websites laden in milliseconden, wat zorgt voor lagere bounce rates, hogere conversies en betere SEO-rankings.",
       icon: <FaBolt className="text-3xl" />,
-      color: "from-blue-400 to-indigo-600",
+      color: "from-[#54eff6] to-[#4cfea6]",
       stats: [
         { value: "0.4s", label: "Gemiddelde laadtijd" },
         { value: "98%", label: "Lighthouse performance score" },
@@ -39,7 +39,7 @@ export const USPSection = () => {
       title: "Snelle Oplevering",
       description: "Terwijl andere bureaus maanden nodig hebben, leveren wij uw website in slechts 5-7 werkdagen op, zonder compromissen op kwaliteit.",
       icon: <FaUserClock className="text-3xl" />,
-      color: "from-emerald-400 to-teal-600",
+      color: "from-[#4cfea6] to-[#f9fa4c]",
       stats: [
         { value: "7", label: "Dagen tot lancering" },
         { value: "24/7", label: "Beschikbaar tijdens ontwikkeling" },
@@ -56,7 +56,7 @@ export const USPSection = () => {
       title: "100% Responsief Design",
       description: "Onze websites passen zich perfect aan elk schermformaat aan - van smartphones tot grote desktopmonitors.",
       icon: <FaMobile className="text-3xl" />,
-      color: "from-amber-400 to-orange-600",
+      color: "from-[#f9fa4c] to-[#4cfea6]",
       stats: [
         { value: "63%", label: "Van verkeer komt via mobiel" },
         { value: "99/100", label: "Mobile usability score" },
@@ -73,7 +73,7 @@ export const USPSection = () => {
       title: "SEO-Geoptimaliseerd",
       description: "Elke website die we bouwen is vanaf de basis geoptimaliseerd voor zoekmachines, zodat u beter vindbaar bent in Google.",
       icon: <FaSearch className="text-3xl" />,
-      color: "from-red-400 to-rose-600",
+      color: "from-[#54eff6] to-[#f9fa4c]",
       stats: [
         { value: "+76%", label: "Gemiddelde stijging in organisch verkeer" },
         { value: "Top 10", label: "Rankings voor belangrijke zoekwoorden" },
@@ -90,7 +90,7 @@ export const USPSection = () => {
       title: "Maximale Veiligheid",
       description: "Onze websites zijn gebouwd met de hoogste veiligheidsstandaarden om uw data en die van uw klanten te beschermen.",
       icon: <FaShieldAlt className="text-3xl" />,
-      color: "from-purple-400 to-fuchsia-600",
+      color: "from-[#4cfea6] to-[#54eff6]",
       stats: [
         { value: "HTTPS", label: "SSL-beveiliging standaard" },
         { value: "Wekelijks", label: "Veiligheidscontroles" },
@@ -107,7 +107,7 @@ export const USPSection = () => {
       title: "Persoonlijke Support",
       description: "Direct contact met uw vaste developer - geen callcenters of steeds wisselende medewerkers.",
       icon: <FaHeadset className="text-3xl" />,
-      color: "from-pink-400 to-rose-600",
+      color: "from-[#f9fa4c] to-[#54eff6]",
       stats: [
         { value: "1 uur", label: "Gemiddelde reactietijd" },
         { value: "1 vast", label: "Contactpersoon" },
@@ -124,7 +124,7 @@ export const USPSection = () => {
   const usp = usps[activeUSP];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-indigo-50 dark:from-zinc-800 dark:to-zinc-900 overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-white to-[#f0fbff] dark:from-zinc-800 dark:to-zinc-900 overflow-hidden">
       <div className="container mx-auto max-w-7xl px-5">
         {/* Header with floating elements */}
         <div className="relative text-center mb-16">
@@ -134,7 +134,7 @@ export const USPSection = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">
-              Waarom <span className="text-indigo-600 dark:text-indigo-400">SpeedAgency</span> Kiezen?
+              Waarom <span className="text-[#54eff6] dark:text-[#54eff6]">SpeedAgency</span> Kiezen?
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto relative z-10">
               Wij onderscheiden ons door onze unieke aanpak die resultaat, snelheid en kwaliteit combineert.
@@ -153,7 +153,7 @@ export const USPSection = () => {
               duration: 8,
               ease: "easeInOut"
             }}
-            className="absolute -top-10 -right-10 md:right-20 w-24 h-24 bg-indigo-100 dark:bg-indigo-900/30 rounded-full blur-xl opacity-70 z-0"
+            className="absolute -top-10 -right-10 md:right-20 w-24 h-24 bg-[#54eff6]/20 dark:bg-[#54eff6]/10 rounded-full blur-xl opacity-70 z-0"
           />
           <motion.div 
             animate={{ 
@@ -165,7 +165,7 @@ export const USPSection = () => {
               duration: 10,
               ease: "easeInOut"
             }}
-            className="absolute top-10 -left-10 md:left-32 w-32 h-32 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-xl opacity-60 z-0"
+            className="absolute top-10 -left-10 md:left-32 w-32 h-32 bg-[#4cfea6]/20 dark:bg-[#4cfea6]/10 rounded-full blur-xl opacity-60 z-0"
           />
         </div>
 
@@ -179,7 +179,7 @@ export const USPSection = () => {
               onClick={() => setActiveUSP(index)}
               className={`flex flex-col items-center p-4 rounded-xl transition-all ${
                 activeUSP === index 
-                  ? `bg-gradient-to-r ${item.color} text-white shadow-lg` 
+                  ? `bg-gradient-to-r ${item.color} text-zinc-800 shadow-lg` 
                   : "bg-white dark:bg-zinc-800 shadow-sm hover:shadow"
               }`}
             >
@@ -191,7 +191,7 @@ export const USPSection = () => {
                 {item.icon}
               </div>
               <span className={`text-xs sm:text-sm font-medium text-center ${
-                activeUSP === index ? 'text-white' : 'text-zinc-700 dark:text-zinc-200'
+                activeUSP === index ? 'text-zinc-800' : 'text-zinc-700 dark:text-zinc-200'
               }`}>
                 {item.title.split(' ')[0]}
               </span>
@@ -213,7 +213,7 @@ export const USPSection = () => {
               {/* Left column - Info */}
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-4 rounded-xl bg-gradient-to-br ${usp.color}`}>
+                  <div className={`p-4 rounded-xl bg-gradient-to-br ${usp.color} text-zinc-800`}>
                     {usp.icon}
                   </div>
                   <h3 className="text-3xl font-bold text-zinc-800 dark:text-white">{usp.title}</h3>
@@ -252,7 +252,7 @@ export const USPSection = () => {
                   transition={{ delay: 0.6 }}
                 >
                   <div className="inline-flex items-center gap-2">
-                    <span className="text-indigo-600 dark:text-indigo-400">
+                    <span className="text-[#54eff6] dark:text-[#54eff6]">
                       <FaChartLine />
                     </span>
                     <span className="font-medium text-zinc-700 dark:text-zinc-200">
@@ -287,7 +287,7 @@ export const USPSection = () => {
                           transition={{ duration: 1, delay: 0.5 + index * 0.2 }}
                           className={`h-10 bg-gradient-to-r ${usp.color} rounded-md flex items-center justify-end px-4`}
                         >
-                          <span className="text-2xl font-bold text-white">{stat.value}</span>
+                          <span className="text-2xl font-bold text-zinc-800">{stat.value}</span>
                         </motion.div>
                       </div>
                     </motion.div>
@@ -314,13 +314,13 @@ export const USPSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`p-8 md:p-12 rounded-2xl bg-gradient-to-r from-indigo-600 to-blue-600 text-white relative overflow-hidden`}
+          className={`p-8 md:p-12 rounded-2xl bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 relative overflow-hidden`}
         >
           <div className="absolute inset-0 overflow-hidden">
             <svg className="absolute left-0 top-0 h-full w-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M0 40L40 0M20 40L40 20M0 20L20 0" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                  <path d="M0 40L40 0M20 40L40 20M0 20L20 0" stroke="rgba(0,0,0,0.06)" strokeWidth="1"/>
                 </pattern>
               </defs>
               <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" />
@@ -332,7 +332,7 @@ export const USPSection = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Klaar om uw online doelen te overtreffen?
               </h3>
-              <p className="text-white/80 max-w-2xl">
+              <p className="text-zinc-700 max-w-2xl">
                 Onze unieke aanpak combineert snelheid, kwaliteit en resultaat. Laten we samenwerken om uw volgende digitale project tot een succes te maken.
               </p>
             </div>
@@ -341,7 +341,7 @@ export const USPSection = () => {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-full bg-white text-indigo-600 font-medium shadow-lg"
+                className="px-8 py-3 rounded-full bg-white text-zinc-800 font-medium shadow-lg border-2 border-[#f9fa4c]"
               >
                 Gratis adviesgesprek
               </motion.a>

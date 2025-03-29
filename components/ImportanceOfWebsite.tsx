@@ -10,22 +10,26 @@ export const ImportanceOfWebsite = () => {
     {
       icon: <FaGlobe />,
       title: "24/7 Online Aanwezigheid",
-      description: "Een website zorgt ervoor dat uw bedrijf altijd bereikbaar is, zelfs buiten kantooruren wanneer potentiële klanten u zoeken."
+      description: "Een website zorgt ervoor dat uw bedrijf altijd bereikbaar is, zelfs buiten kantooruren wanneer potentiële klanten u zoeken.",
+      color: "#54eff6" // Cyan
     },
     {
       icon: <FaUsers />,
       title: "Bereik Een Breder Publiek",
-      description: "Vergroot uw geografisch bereik en trek klanten aan die anders nooit van uw bedrijf zouden hebben gehoord."
+      description: "Vergroot uw geografisch bereik en trek klanten aan die anders nooit van uw bedrijf zouden hebben gehoord.",
+      color: "#4cfea6" // Green
     },
     {
       icon: <FaMobileAlt />,
       title: "Mobiele Toegankelijkheid",
-      description: "Met een responsieve website bereikt u de groeiende groep consumenten die voornamelijk via smartphones online shoppen."
+      description: "Met een responsieve website bereikt u de groeiende groep consumenten die voornamelijk via smartphones online shoppen.",
+      color: "#f9fa4c" // Yellow
     },
     {
       icon: <FaChartLine />,
       title: "Meet Resultaten & Groei",
-      description: "Volg bezoekers, conversies en andere belangrijke gegevens om uw marketingstrategie voortdurend te verbeteren."
+      description: "Volg bezoekers, conversies en andere belangrijke gegevens om uw marketingstrategie voortdurend te verbeteren.",
+      color: "#54eff6" // Cyan (repeating)
     }
   ];
 
@@ -85,7 +89,9 @@ export const ImportanceOfWebsite = () => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <span className="text-indigo-600 dark:text-indigo-400 mt-1"><FaCheck /></span>
+                  <span className="mt-1" style={{ color: index % 3 === 0 ? "#54eff6" : index % 3 === 1 ? "#4cfea6" : "#f9fa4c" }}>
+                    <FaCheck />
+                  </span>
                   <p className="text-zinc-600 dark:text-zinc-300">{item}</p>
                 </motion.div>
               ))}
@@ -100,9 +106,10 @@ export const ImportanceOfWebsite = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-zinc-900 p-6 rounded-lg shadow-sm"
+              className="bg-white dark:bg-zinc-900 p-6 rounded-lg shadow-md"
+              style={{ borderTop: `3px solid ${benefit.color}` }}
             >
-              <div className="text-indigo-600 dark:text-indigo-400 text-3xl mb-4">
+              <div className="text-3xl mb-4" style={{ color: benefit.color }}>
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-bold mb-2 text-zinc-700 dark:text-white">{benefit.title}</h3>
@@ -111,8 +118,8 @@ export const ImportanceOfWebsite = () => {
           ))}
         </div>
 
-        <div className="bg-indigo-600 rounded-2xl p-10 text-white">
-          <h3 className="text-2xl font-bold mb-8 text-center">Cijfers die voor zich spreken</h3>
+        <div className="rounded-2xl p-10 text-white" style={{ background: "linear-gradient(135deg, #54eff6, #4cfea6)" }}>
+          <h3 className="text-2xl font-bold mb-8 text-center text-zinc-800">Cijfers die voor zich spreken</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {statistics.map((stat, index) => (
               <motion.div
@@ -120,10 +127,10 @@ export const ImportanceOfWebsite = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center bg-white/20 backdrop-blur-sm p-4 rounded-lg"
               >
-                <p className="text-4xl font-bold mb-2">{stat.value}</p>
-                <p className="text-sm opacity-80">{stat.label}</p>
+                <p className="text-4xl font-bold mb-2 text-zinc-800">{stat.value}</p>
+                <p className="text-sm text-zinc-800">{stat.label}</p>
               </motion.div>
             ))}
           </div>

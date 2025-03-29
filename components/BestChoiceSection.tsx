@@ -11,17 +11,17 @@ export const BestChoiceSection = () => {
     {
       title: "Technische Superioriteit",
       description: "Wij bouwen uitsluitend met Next.js, React en TailwindCSS - de snelste en meest flexibele technologieën voor moderne websites.",
-      icon: <FaRocket className="text-4xl text-indigo-600 dark:text-indigo-400" />,
+      icon: <FaRocket className="text-4xl text-[#54eff6] dark:text-[#54eff6]" />,
     },
     {
       title: "Ongeëvenaarde Snelheid",
       description: "Terwijl andere bureaus weken of maanden nodig hebben, leveren wij uw website binnen 1-2 weken op zonder concessies aan kwaliteit.",
-      icon: <FaClock className="text-4xl text-indigo-600 dark:text-indigo-400" />,
+      icon: <FaClock className="text-4xl text-[#4cfea6] dark:text-[#4cfea6]" />,
     },
     {
       title: "Bewezen Resultaten",
       description: "Onze websites hebben aantoonbaar hogere conversiepercentages, betere SEO-scores en hogere klanttevredenheid dan WordPress alternatieven.",
-      icon: <FaAward className="text-4xl text-indigo-600 dark:text-indigo-400" />,
+      icon: <FaAward className="text-4xl text-[#f9fa4c] dark:text-[#f9fa4c]" />,
     }
   ];
 
@@ -63,7 +63,7 @@ export const BestChoiceSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-800 dark:text-white">
-            Waarom Wij De <span className="text-indigo-600 dark:text-indigo-400">Beste Keuze</span> Zijn
+            Waarom Wij De <span className="text-[#54eff6] dark:text-[#54eff6]">Beste Keuze</span> Zijn
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto">
             Met onze focus op Next.js ontwikkeling bieden we oplossingen die de standaard WordPress-aanpak 
@@ -95,7 +95,7 @@ export const BestChoiceSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <div className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-zinc-900 dark:to-indigo-900/30 rounded-3xl p-8 md:p-12">
+          <div className="bg-gradient-to-br from-[#54eff6]/10 to-[#4cfea6]/10 dark:from-zinc-900 dark:to-[#54eff6]/10 rounded-3xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-zinc-800 dark:text-white">
               SpeedAgency vs. Traditionele Bureaus
             </h3>
@@ -127,7 +127,7 @@ export const BestChoiceSection = () => {
                     <div className="mt-2 md:mt-0">
                       <div className="block md:hidden text-xs text-zinc-500 dark:text-zinc-400 mb-1">SpeedAgency</div>
                       <div className="flex items-center gap-2">
-                        <FaCheckCircle className="text-green-500" />
+                        <FaCheckCircle className="text-[#4cfea6]" />
                         <span className="text-zinc-800 dark:text-white">{item.us}</span>
                       </div>
                     </div>
@@ -139,7 +139,7 @@ export const BestChoiceSection = () => {
                     
                     <div className="mt-2 md:mt-0">
                       <div className="block md:hidden text-xs text-zinc-500 dark:text-zinc-400 mb-1">Uw Voordeel</div>
-                      <div className="text-indigo-600 dark:text-indigo-400 font-medium">{item.benefit}</div>
+                      <div className="text-[#54eff6] dark:text-[#54eff6] font-medium">{item.benefit}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -155,8 +155,8 @@ export const BestChoiceSection = () => {
           transition={{ duration: 0.5 }}
           className="relative mb-20 overflow-hidden"
         >
-          <div className="absolute -top-20 -right-20 w-64 h-64 bg-indigo-100 dark:bg-indigo-900/20 rounded-full blur-3xl opacity-70 z-0"></div>
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-3xl opacity-70 z-0"></div>
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#54eff6]/20 dark:bg-[#54eff6]/10 rounded-full blur-3xl opacity-70 z-0"></div>
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#4cfea6]/20 dark:bg-[#4cfea6]/10 rounded-full blur-3xl opacity-70 z-0"></div>
           
           <div className="relative z-10 bg-white dark:bg-zinc-700 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 dark:border-zinc-600">
             <div className="md:flex items-center gap-8">
@@ -174,7 +174,7 @@ export const BestChoiceSection = () => {
               <div className="md:w-2/3">
                 <div className="mb-6">
                   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.4 28H10.4L15.2 18.4H10.4V12H20V21.6L18.4 28ZM32.8 28H24.8L29.6 18.4H24.8V12H34.4V21.6L32.8 28Z" fill="#4F46E5" />
+                    <path d="M18.4 28H10.4L15.2 18.4H10.4V12H20V21.6L18.4 28ZM32.8 28H24.8L29.6 18.4H24.8V12H34.4V21.6L32.8 28Z" fill="#54eff6" />
                   </svg>
                 </div>
                 
@@ -210,7 +210,7 @@ export const BestChoiceSection = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 px-8 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-xl mx-auto"
+              className="flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#54eff6] to-[#4cfea6] hover:from-[#4cfea6] hover:to-[#54eff6] text-zinc-800 font-medium shadow-xl mx-auto"
             >
               <span>Plan een vrijblijvend gesprek</span>
               <FaArrowRight />

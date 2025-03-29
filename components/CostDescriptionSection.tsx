@@ -85,22 +85,22 @@ export const CostDescriptionSection = () => {
 
   const benefits = [
     {
-      icon: <FaRocket className="text-indigo-500 dark:text-indigo-400" />,
+      icon: <FaRocket className="text-[#54eff6] dark:text-[#54eff6]" />,
       title: "10x Snellere Website",
       description: "Onze Next.js websites laden gemiddeld in 0.4 seconden, terwijl WordPress sites vaak 4+ seconden nodig hebben."
     },
     {
-      icon: <FaRegClock className="text-indigo-500 dark:text-indigo-400" />,
+      icon: <FaRegClock className="text-[#4cfea6] dark:text-[#4cfea6]" />,
       title: "2 Weken Snellere Oplevering",
       description: "Traditionele bureaus hebben 4-8 weken nodig, wij leveren binnen 3-10 dagen zonder in te leveren op kwaliteit."
     },
     {
-      icon: <FaShieldAlt className="text-indigo-500 dark:text-indigo-400" />,
+      icon: <FaShieldAlt className="text-[#54eff6] dark:text-[#54eff6]" />,
       title: "99.9% Minder Beveiligingsrisico's",
       description: "Next.js elimineert vrijwel alle beveiligingsproblemen die WordPress sites vaak kwetsbaar maken voor hackers."
     },
     {
-      icon: <FaChartLine className="text-indigo-500 dark:text-indigo-400" />,
+      icon: <FaChartLine className="text-[#4cfea6] dark:text-[#4cfea6]" />,
       title: "35% Hogere Conversie",
       description: "Onze klanten rapporteren gemiddeld 35% meer conversies door kortere laadtijden en betere gebruikerservaring."
     }
@@ -125,9 +125,9 @@ export const CostDescriptionSection = () => {
     <section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 overflow-hidden relative">
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-40 left-10 w-72 h-72 bg-indigo-200 dark:bg-indigo-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-60 right-10 w-80 h-80 bg-blue-200 dark:bg-blue-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-40 right-1/4 w-64 h-64 bg-purple-200 dark:bg-purple-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-40 left-10 w-72 h-72 bg-[#54eff6]/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-60 right-10 w-80 h-80 bg-[#4cfea6]/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-40 right-1/4 w-64 h-64 bg-[#f9fa4c]/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto max-w-7xl px-5 relative z-10">
@@ -138,9 +138,9 @@ export const CostDescriptionSection = () => {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center justify-center p-3 bg-gradient-to-r from-indigo-500 to-blue-600 dark:from-indigo-600 dark:to-blue-700 rounded-2xl shadow-xl"
+              className="flex items-center justify-center p-3 bg-gradient-to-r from-[#54eff6] to-[#4cfea6] rounded-2xl shadow-xl"
             >
-              <FaMedal className="text-2xl text-white" />
+              <FaMedal className="text-2xl text-zinc-800" />
             </motion.div>
           </div>
           <motion.h2
@@ -149,7 +149,7 @@ export const CostDescriptionSection = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold mb-4 text-zinc-800 dark:text-white"
           >
-            Investering met <span className="text-indigo-600 dark:text-indigo-400">Bewezen Rendement</span>
+            Investering met <span className="text-[#54eff6] dark:text-[#54eff6]">Bewezen Rendement</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -169,7 +169,7 @@ export const CostDescriptionSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 rounded-3xl p-8 md:p-12 shadow-xl border border-indigo-100 dark:border-indigo-800/30">
+          <div className="bg-gradient-to-r from-[#54eff6]/10 to-[#4cfea6]/10 dark:from-[#54eff6]/5 dark:to-[#4cfea6]/5 rounded-3xl p-8 md:p-12 shadow-xl border border-[#54eff6]/20 dark:border-[#54eff6]/20">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-zinc-800 dark:text-white">
@@ -204,12 +204,12 @@ export const CostDescriptionSection = () => {
               <div className="bg-white dark:bg-zinc-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-zinc-700">
                 <div className="flex justify-center mb-6">
                   <div className="relative w-40 h-40">
-                    <Image
-                      src="/roi-chart.svg"
-                      alt="Return on Investment Chart"
-                      fill
-                      className="object-contain"
-                    />
+                  <Image
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    alt="Rendement Vergelijking Grafiek"
+                    fill
+                    className="object-cover rounded-xl"
+                  />
                   </div>
                 </div>
                 
@@ -220,9 +220,9 @@ export const CostDescriptionSection = () => {
                     <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-1">WordPress Website</p>
                     <p className="text-2xl font-bold text-zinc-800 dark:text-white">112%</p>
                   </div>
-                  <div className="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-xl border-2 border-indigo-500 dark:border-indigo-400">
-                    <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-1">Next.js (SpeedAgency)</p>
-                    <p className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">285%</p>
+                  <div className="bg-[#54eff6]/10 dark:bg-[#54eff6]/20 p-4 rounded-xl border-2 border-[#54eff6] dark:border-[#54eff6]">
+                    <p className="text-sm text-[#54eff6] dark:text-[#54eff6] mb-1">Next.js (SpeedAgency)</p>
+                    <p className="text-2xl font-bold text-[#54eff6] dark:text-[#54eff6]">285%</p>
                   </div>
                 </div>
                 
@@ -231,7 +231,7 @@ export const CostDescriptionSection = () => {
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className="text-sm flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium"
+                      className="text-sm flex items-center gap-2 text-[#54eff6] dark:text-[#54eff6] font-medium"
                     >
                       <span>Bekijk onze cases</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -279,7 +279,7 @@ export const CostDescriptionSection = () => {
                 >
                   {pkg.name}
                   {pkg.popular && (
-                    <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-indigo-600 text-white text-xs font-medium rounded-full">
+                    <span className="absolute -top-2 -right-2 px-2 py-0.5 bg-[#f9fa4c] text-zinc-800 text-xs font-medium rounded-full">
                       Populair
                     </span>
                   )}
@@ -305,7 +305,7 @@ export const CostDescriptionSection = () => {
                   }}
                   className={`rounded-2xl overflow-hidden transition-all duration-300 ${
                     isActive 
-                      ? "border-2 border-indigo-500 dark:border-indigo-400 bg-white dark:bg-zinc-800"
+                      ? "border-2 border-[#54eff6] dark:border-[#54eff6] bg-white dark:bg-zinc-800"
                       : "border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 opacity-80"
                   }`}
                 >
@@ -326,7 +326,7 @@ export const CostDescriptionSection = () => {
                     <div className="space-y-3 mb-8">
                       {pkg.features.map((feature, i) => (
                         <div key={i} className="flex items-center gap-3">
-                          <FaCheckCircle className="text-green-500 dark:text-green-400 flex-shrink-0" />
+                          <FaCheckCircle className="text-[#4cfea6] dark:text-[#4cfea6] flex-shrink-0" />
                           <span className="text-zinc-700 dark:text-zinc-300 text-sm">{feature}</span>
                         </div>
                       ))}
@@ -345,7 +345,7 @@ export const CostDescriptionSection = () => {
                         whileTap={{ scale: 0.97 }}
                         className={`w-full py-3 rounded-xl transition-colors ${
                           isActive
-                            ? "bg-indigo-600 hover:bg-indigo-700 text-white" 
+                            ? "bg-gradient-to-r from-[#54eff6] to-[#4cfea6] hover:from-[#4cfea6] hover:to-[#54eff6] text-zinc-800" 
                             : "bg-gray-100 dark:bg-zinc-700 hover:bg-gray-200 dark:hover:bg-zinc-600 text-zinc-800 dark:text-white"
                         }`}
                       >
@@ -355,7 +355,7 @@ export const CostDescriptionSection = () => {
                   </div>
                   
                   {pkg.popular && (
-                    <div className="bg-indigo-600 py-2 text-center text-sm font-medium text-white">
+                    <div className="bg-[#f9fa4c] py-2 text-center text-sm font-medium text-zinc-800">
                       Aanbevolen voor de meeste bedrijven
                     </div>
                   )}
@@ -385,7 +385,7 @@ export const CostDescriptionSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-white dark:bg-zinc-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-zinc-700 relative"
               >
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#54eff6] rounded-full flex items-center justify-center shadow-lg">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 11L6 7L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M18 11L14 7L18 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -427,9 +427,9 @@ export const CostDescriptionSection = () => {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="flex items-center justify-center p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-full"
+              className="flex items-center justify-center p-3 bg-[#54eff6]/20 dark:bg-[#54eff6]/20 rounded-full"
             >
-              <FaRegLightbulb className="text-2xl text-indigo-600 dark:text-indigo-400" />
+              <FaRegLightbulb className="text-2xl text-[#54eff6] dark:text-[#54eff6]" />
             </motion.div>
           </div>
           
@@ -446,7 +446,7 @@ export const CostDescriptionSection = () => {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="px-8 py-3 rounded-xl bg-white dark:bg-zinc-800 text-indigo-600 dark:text-indigo-400 border border-gray-100 dark:border-zinc-700 hover:border-indigo-100 dark:hover:border-indigo-800 font-medium shadow-md"
+                className="px-8 py-3 rounded-xl bg-white dark:bg-zinc-800 text-[#54eff6] dark:text-[#54eff6] border border-gray-100 dark:border-zinc-700 hover:border-[#54eff6]/30 dark:hover:border-[#54eff6]/30 font-medium shadow-md"
               >
                 Bekijk veelgestelde vragen
               </motion.button>
@@ -456,7 +456,7 @@ export const CostDescriptionSection = () => {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-lg"
+                className="px-8 py-3 rounded-xl bg-gradient-to-r from-[#54eff6] to-[#4cfea6] hover:from-[#4cfea6] hover:to-[#54eff6] text-zinc-800 font-medium shadow-lg"
               >
                 Vrijblijvend gesprek plannen
               </motion.button>
@@ -473,9 +473,9 @@ export const CostDescriptionSection = () => {
         className="hidden md:block absolute top-40 right-10 transform rotate-12 z-30"
       >
         <div className="relative flex items-center justify-center w-28 h-28">
-          <div className="absolute inset-0 bg-yellow-500 rounded-full animate-ping opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full shadow-lg flex items-center justify-center">
-            <div className="text-center text-white">
+          <div className="absolute inset-0 bg-[#f9fa4c] rounded-full animate-ping opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f9fa4c] to-[#f9fa4c]/80 rounded-full shadow-lg flex items-center justify-center">
+            <div className="text-center text-zinc-800">
               <div className="text-xs font-bold">GEEN</div>
               <div className="text-lg font-bold">VERBORGEN</div>
               <div className="text-xs font-bold">KOSTEN</div>

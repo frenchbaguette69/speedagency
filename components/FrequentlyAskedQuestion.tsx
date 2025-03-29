@@ -8,7 +8,6 @@ export const FrequentlyAskedQuestions = () => {
   const [openItem, setOpenItem] = useState<number | null>(0);
   const [activeCategory, setActiveCategory] = useState("all");
   
-  // FAQ data
   const faqCategories = [
     { id: "all", label: "Alle vragen", icon: <FaSearch /> },
     { id: "process", label: "Proces", icon: <FaClock /> },
@@ -73,17 +72,14 @@ export const FrequentlyAskedQuestions = () => {
     }
   ];
 
-  // Filter FAQs by active category
   const filteredFaqs = activeCategory === "all" 
     ? faqItems 
     : faqItems.filter(item => item.category === activeCategory);
     
-  // Handle toggle FAQ item
   const toggleItem = (index: number) => {
     setOpenItem(openItem === index ? null : index);
   };
 
-  // Get number of FAQs per category for the badge
   const getCategoryCount = (categoryId: string) => {
     return categoryId === "all" 
       ? faqItems.length 
@@ -92,12 +88,12 @@ export const FrequentlyAskedQuestions = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-zinc-900 dark:to-zinc-800 overflow-hidden relative">
-      {/* Background decorative elements */}
-      <div className="absolute top-40 left-0 w-64 h-64 bg-indigo-300 dark:bg-indigo-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 dark:opacity-40"></div>
-      <div className="absolute top-80 right-0 w-72 h-72 bg-blue-300 dark:bg-blue-900/40 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 dark:opacity-40"></div>
+      {/* Background elements */}
+      <div className="absolute top-40 left-0 w-64 h-64 bg-[#54eff6]/20 rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute top-80 right-0 w-72 h-72 bg-[#4cfea6]/20 rounded-full blur-3xl opacity-30"></div>
 
       <div className="container mx-auto max-w-7xl px-5 relative z-10">
-        {/* Animated header */}
+        {/* Header section */}
         <div className="text-center mb-16 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -105,12 +101,9 @@ export const FrequentlyAskedQuestions = () => {
             transition={{ duration: 0.5 }}
             className="relative z-10"
           >
-            {/* Floating icon */}
             <motion.div 
               className="inline-flex justify-center items-center mb-6"
-              animate={{ 
-                y: [0, -8, 0],
-              }}
+              animate={{ y: [0, -8, 0] }}
               transition={{ 
                 repeat: Infinity, 
                 duration: 3,
@@ -118,7 +111,6 @@ export const FrequentlyAskedQuestions = () => {
               }}
             >
               <div className="relative">
-                {/* Pulsing animation */}
                 <motion.div
                   animate={{ 
                     scale: [1, 1.2, 1],
@@ -129,16 +121,16 @@ export const FrequentlyAskedQuestions = () => {
                     duration: 3,
                     ease: "easeInOut" 
                   }}
-                  className="absolute inset-0 rounded-full bg-indigo-200 dark:bg-indigo-500/20"
+                  className="absolute inset-0 rounded-full bg-[#54eff6]/20"
                 />
-                <div className="relative p-4 bg-white dark:bg-indigo-900 rounded-full shadow-lg">
-                  <FaQuestionCircle className="text-2xl text-indigo-600 dark:text-indigo-300" />
+                <div className="relative p-4 bg-white dark:bg-zinc-800 rounded-full shadow-lg">
+                  <FaQuestionCircle className="text-2xl text-[#54eff6]" />
                 </div>
               </div>
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-900 dark:text-white">
-              Veelgestelde <span className="text-indigo-600 dark:text-indigo-400">Vragen</span>
+              Veelgestelde <span className="text-[#54eff6]">Vragen</span>
             </h2>
             <p className="text-lg text-zinc-700 dark:text-gray-200 max-w-3xl mx-auto">
               Alles wat u moet weten over onze diensten, proces en technologie.
@@ -147,7 +139,7 @@ export const FrequentlyAskedQuestions = () => {
           </motion.div>
         </div>
 
-        {/* Category tabs */}
+        {/* Category selection */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,16 +155,16 @@ export const FrequentlyAskedQuestions = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-5 py-3.5 rounded-xl flex items-center gap-2.5 text-sm md:text-base font-medium transition-all ${
                   activeCategory === category.id
-                    ? "bg-indigo-600 text-white shadow-lg" 
-                    : "bg-white dark:bg-zinc-700 text-zinc-800 dark:text-white hover:bg-gray-50 dark:hover:bg-zinc-600 shadow-sm border border-gray-100 dark:border-zinc-600"
+                    ? "bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 shadow-lg" 
+                    : "bg-white dark:bg-zinc-700 text-zinc-800 dark:text-white hover:bg-gray-50 dark:hover:bg-zinc-600 shadow-sm"
                 }`}
               >
                 <span>{category.icon}</span>
                 {category.label}
                 <span className={`px-2.5 py-1 text-xs rounded-full ${
                   activeCategory === category.id
-                    ? "bg-white/20 text-white" 
-                    : "bg-gray-100 dark:bg-zinc-600 text-zinc-700 dark:text-zinc-200"
+                    ? "bg-white/20" 
+                    : "bg-gray-100 dark:bg-zinc-600"
                 }`}>
                   {getCategoryCount(category.id)}
                 </span>
@@ -181,7 +173,7 @@ export const FrequentlyAskedQuestions = () => {
           </div>
         </motion.div>
 
-        {/* FAQ items with enhanced visibility */}
+        {/* FAQ Items */}
         <div className="max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -203,30 +195,29 @@ export const FrequentlyAskedQuestions = () => {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className={`rounded-2xl overflow-hidden ${
                       isOpen 
-                        ? "shadow-xl ring-1 ring-indigo-200 dark:ring-indigo-500/30" 
+                        ? "shadow-xl ring-1 ring-[#54eff6]/20" 
                         : "shadow-md hover:shadow-lg transition-shadow"
                     }`}
                   >
-                    {/* Question header - ENHANCED CONTRAST */}
                     <motion.button
                       onClick={() => toggleItem(index)}
                       className={`w-full flex justify-between items-center text-left p-6 ${
                         isOpen 
                           ? "bg-white dark:bg-zinc-800" 
                           : isHighlighted 
-                            ? "bg-gradient-to-r from-indigo-50 to-white dark:from-indigo-900/20 dark:to-zinc-800" 
+                            ? "bg-gradient-to-r from-[#54eff6]/10 to-white dark:from-[#54eff6]/5 dark:to-zinc-800" 
                             : "bg-white dark:bg-zinc-800"
                       }`}
                     >
                       <div className="flex items-center gap-4">
                         {isHighlighted && (
-                          <span className="inline-flex items-center justify-center shrink-0 w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-600 dark:text-indigo-300">
+                          <span className="inline-flex items-center justify-center shrink-0 w-10 h-10 bg-[#54eff6]/10 rounded-full text-[#54eff6]">
                             <FaRegLightbulb />
                           </span>
                         )}
                         <h3 className={`text-lg md:text-xl font-medium ${
                           isOpen 
-                            ? "text-indigo-600 dark:text-indigo-300" 
+                            ? "text-[#54eff6]" 
                             : "text-zinc-800 dark:text-white"
                         }`}>
                           {faq.question}
@@ -234,14 +225,13 @@ export const FrequentlyAskedQuestions = () => {
                       </div>
                       <div className={`flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full ${
                         isOpen 
-                          ? "bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300" 
+                          ? "bg-[#54eff6]/10 text-[#54eff6]" 
                           : "bg-gray-100 dark:bg-zinc-700 text-zinc-500 dark:text-white"
                       }`}>
                         {isOpen ? <FaMinus /> : <FaPlus />}
                       </div>
                     </motion.button>
                     
-                    {/* Answer content */}
                     <AnimatePresence>
                       {isOpen && (
                         <motion.div
@@ -266,40 +256,16 @@ export const FrequentlyAskedQuestions = () => {
               })}
             </motion.div>
           </AnimatePresence>
-          
-          {/* Empty state when no FAQs match the filter */}
-          {filteredFaqs.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className="text-center py-16"
-            >
-              <div className="bg-white dark:bg-zinc-800 p-10 rounded-2xl shadow-lg border border-gray-100 dark:border-zinc-700">
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-gray-100 dark:bg-zinc-700 rounded-full">
-                    <FaSearch className="text-2xl text-gray-400 dark:text-gray-300" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-medium mb-2 text-zinc-800 dark:text-white">
-                  Geen vragen gevonden in deze categorie
-                </h3>
-                <p className="text-zinc-700 dark:text-gray-300">
-                  Probeer een andere categorie of neem contact met ons op voor meer informatie.
-                </p>
-              </div>
-            </motion.div>
-          )}
         </div>
         
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="mt-16 text-center relative z-10"
         >
-          <div className="bg-white dark:bg-zinc-800 rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100 dark:border-zinc-700 max-w-3xl mx-auto">
+          <div className="bg-white dark:bg-zinc-800 rounded-2xl p-8 md:p-10 shadow-xl border border-[#54eff6]/10 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-4 text-zinc-800 dark:text-white">
               Heeft u nog een andere vraag?
             </h3>
@@ -311,7 +277,7 @@ export const FrequentlyAskedQuestions = () => {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-lg inline-flex items-center justify-center gap-2"
+                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 font-medium shadow-lg inline-flex items-center justify-center gap-2"
               >
                 Contact opnemen
               </motion.a>
@@ -319,7 +285,7 @@ export const FrequentlyAskedQuestions = () => {
                 href="tel:+31612345678"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3.5 rounded-xl bg-white dark:bg-zinc-700 text-indigo-600 dark:text-indigo-300 border border-gray-200 dark:border-zinc-600 hover:border-indigo-200 dark:hover:border-indigo-800 font-medium shadow-md inline-flex items-center justify-center gap-2"
+                className="px-8 py-3.5 rounded-xl bg-white dark:bg-zinc-700 text-[#54eff6] border border-[#54eff6]/20 hover:border-[#54eff6]/40 font-medium shadow-md inline-flex items-center justify-center gap-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

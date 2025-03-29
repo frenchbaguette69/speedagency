@@ -85,10 +85,10 @@ return (
     <ImportanceOfWebsite />
     <BusinessCustomWebsite />
     <NextJsOverWordPress />
-    <ProjectsShowcase />
+    {/* <ProjectsShowcase /> */}
     <USPSection />
     <BestChoiceSection />
-    <LatestBlogPosts />
+    {/* <LatestBlogPosts /> */}
     <FrequentlyAskedQuestions />
     <CostDescriptionSection />
   </div>
