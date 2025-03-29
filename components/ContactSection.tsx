@@ -1,12 +1,28 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IconMailFilled } from "@tabler/icons-react";
-import { useId } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 export function ContactSection() {
+  const patternIdRef = useRef<string>("grid-pattern-static");
+  
+  const [mounted, setMounted] = useState(false);
+  
+  const stablePattern = [
+    [8, 3],
+    [9, 2],
+    [7, 4],
+    [10, 1],
+    [8, 5],
+  ];
+  
+  useEffect(() => {
+    setMounted(true);
+    patternIdRef.current = `grid-pattern-${Math.floor(Math.random() * 1000000)}`;
+  }, []);
+
   return (
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-10 md:px-6 md:py-20 lg:grid-cols-2">
       <div className="relative flex flex-col items-center overflow-hidden lg:items-start">
@@ -31,11 +47,9 @@ export function ContactSection() {
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             +31 (6) 34 84 9552
           </p>
-
         </div>
+        
         <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
-          <Pin className="right-26 bottom-20" />
-
           <Image
             src="/world.svg"
             width={500}
@@ -43,10 +57,28 @@ export function ContactSection() {
             alt="world map"
             className="[transform:rotateX(45deg)_translateZ(0px)] dark:invert dark:filter"
           />
+
+          {mounted && <StablePin className="right-26 bottom-20" />}
         </div>
       </div>
+      
       <div className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-gray-100 to-gray-200 p-4 dark:from-neutral-900 dark:to-neutral-950 sm:p-10">
-        <Grid size={20} />
+        {mounted && (
+          <div className="pointer-events-none absolute left-1/2 top-0 -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/30 to-zinc-900/30 opacity-10 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 dark:to-zinc-900/30">
+              <StableGridPattern
+                width={20}
+                height={20}
+                x="-12"
+                y="4"
+                squares={stablePattern}
+                patternId={patternIdRef.current}
+                className="absolute inset-0 h-full w-full fill-black/100 stroke-black/100 mix-blend-overlay dark:fill-white/100 dark:stroke-white/100"
+              />
+            </div>
+          </div>
+        )}
+        
         <div className="relative z-20 mb-4 w-full">
           <label
             className="mb-2 inline-block text-sm font-medium text-neutral-600 dark:text-neutral-300"
@@ -111,9 +143,9 @@ export function ContactSection() {
   );
 }
 
-const Pin = ({ className }: { className?: string }) => {
+const StablePin = ({ className }: { className?: string }) => {
   return (
-    <motion.div
+    <div
       style={{
         transform: "translateZ(1px)",
       }}
@@ -135,78 +167,15 @@ const Pin = ({ className }: { className?: string }) => {
           }}
           className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
         >
-          <>
-            <motion.div
-              initial={{
-                opacity: 0,
-                scale: 0,
-                x: "-50%",
-                y: "-50%",
-              }}
-              animate={{
-                opacity: [0, 1, 0.5, 0],
-                scale: 1,
-
-                z: 0,
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                delay: 0,
-              }}
-              className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"
-            ></motion.div>
-            <motion.div
-              initial={{
-                opacity: 0,
-                scale: 0,
-                x: "-50%",
-                y: "-50%",
-              }}
-              animate={{
-                opacity: [0, 1, 0.5, 0],
-                scale: 1,
-
-                z: 0,
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                delay: 2,
-              }}
-              className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"
-            ></motion.div>
-            <motion.div
-              initial={{
-                opacity: 0,
-                scale: 0,
-                x: "-50%",
-                y: "-50%",
-              }}
-              animate={{
-                opacity: [0, 1, 0.5, 0],
-                scale: 1,
-
-                z: 0,
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                delay: 4,
-              }}
-              className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"
-            ></motion.div>
-          </>
+          <div className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"></div>
         </div>
 
-        <>
-          <motion.div className="absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-blue-500 blur-[2px]" />
-          <motion.div className="absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-blue-500" />
-          <motion.div className="absolute bottom-1/2 right-1/2 z-40 h-[4px] w-[4px] translate-x-[1.5px] translate-y-[14px] rounded-full bg-blue-600 blur-[3px]" />
-          <motion.div className="absolute bottom-1/2 right-1/2 z-40 h-[2px] w-[2px] translate-x-[0.5px] translate-y-[14px] rounded-full bg-blue-300" />
-        </>
+        <div className="absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-blue-500 blur-[2px]" />
+        <div className="absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-blue-500" />
+        <div className="absolute bottom-1/2 right-1/2 z-40 h-[4px] w-[4px] translate-x-[1.5px] translate-y-[14px] rounded-full bg-blue-600 blur-[3px]" />
+        <div className="absolute bottom-1/2 right-1/2 z-40 h-[2px] w-[2px] translate-x-[0.5px] translate-y-[14px] rounded-full bg-blue-300" />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -239,41 +208,9 @@ export const FeatureIconContainer = ({
   );
 };
 
-export const Grid = ({
-  pattern,
-  size,
-}: {
-  pattern?: number[][];
-  size?: number;
-}) => {
-  const p = pattern ?? [
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-  ];
+function StableGridPattern({ width, height, x, y, squares, patternId, className }: any) {
   return (
-    <div className="pointer-events-none absolute left-1/2 top-0 -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
-      <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/30 to-zinc-900/30 opacity-10 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 dark:to-zinc-900/30">
-        <GridPattern
-          width={size ?? 20}
-          height={size ?? 20}
-          x="-12"
-          y="4"
-          squares={p}
-          className="absolute inset-0 h-full w-full fill-black/100 stroke-black/100 mix-blend-overlay dark:fill-white/100 dark:stroke-white/100"
-        />
-      </div>
-    </div>
-  );
-};
-
-export function GridPattern({ width, height, x, y, squares, ...props }: any) {
-  const patternId = useId();
-
-  return (
-    <svg aria-hidden="true" {...props}>
+    <svg aria-hidden="true" className={className}>
       <defs>
         <pattern
           id={patternId}
@@ -294,7 +231,7 @@ export function GridPattern({ width, height, x, y, squares, ...props }: any) {
       />
       {squares && (
         <svg x={x} y={y} className="overflow-visible">
-          {squares.map(([x, y]: any, idx: number) => (
+          {squares.map(([x, y]: number[], idx: number) => (
             <rect
               strokeWidth="0"
               key={`${x}-${y}-${idx}`}
