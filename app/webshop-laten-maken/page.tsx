@@ -64,7 +64,7 @@ const Page = () => {
       <WebshopHeroSection />
       <WebshopChecklist />
       <WebshopWorkflow />
-      <WebshopProjectsShowcase />
+      {/* <WebshopProjectsShowcase /> */}
       <WebshopTechnologyStack />
       <WebshopCustomerExperience />
       <WebshopCallToAction />

@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaShoppingCart, FaRocket, FaCreditCard, FaSearch, FaMobileAlt, FaShieldAlt, FaRegLightbulb, FaChartLine } from "react-icons/fa";
+import { FaShoppingCart, FaRocket, FaCreditCard, FaSearch, FaMobileAlt, FaShieldAlt } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
 
 export const WebshopChecklist = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -14,73 +13,37 @@ export const WebshopChecklist = () => {
       title: "Conversiegericht Design",
       description: "Onze webshops zijn specifiek ontworpen om bezoekers om te zetten in klanten, met strategisch geplaatste CTA's en een geoptimaliseerde checkout flow.",
       icon: <FaShoppingCart className="text-xl" />,
-      color: "from-green-500 to-emerald-700",
-      lightBg: "bg-green-50",
-      darkBg: "bg-green-900/40", // Increased opacity for better contrast
-      glow: "green"
+      color: "#54eff6"
     },
     {
       title: "Razendsnel Laden",
       description: "Met Next.js technologie laden onze webshops gemiddeld 10x sneller dan WordPress/WooCommerce of Shopify winkels, wat direct leidt tot hogere conversiepercentages.",
       icon: <FaRocket className="text-xl" />,
-      color: "from-indigo-500 to-blue-700",
-      lightBg: "bg-indigo-50",
-      darkBg: "bg-indigo-900/40",
-      glow: "indigo"
+      color: "#4cfea6"
     },
     {
       title: "Flexibele Betaalopties",
       description: "Integratie van alle populaire betaalmethoden (iDeal, creditcards, Klarna, AfterPay) zodat klanten altijd kunnen afrekenen op hun voorkeursmanier.",
       icon: <FaCreditCard className="text-xl" />,
-      color: "from-purple-500 to-violet-700",
-      lightBg: "bg-purple-50",
-      darkBg: "bg-purple-900/40",
-      glow: "purple"
+      color: "#54eff6"
     },
     {
       title: "E-commerce SEO",
       description: "Geavanceerde SEO-optimalisatie specifiek voor webshops, inclusief productschema's, geoptimaliseerde categoriestructuren en automatische sitemaps.",
       icon: <FaSearch className="text-xl" />,
-      color: "from-amber-500 to-orange-700",
-      lightBg: "bg-amber-50",
-      darkBg: "bg-amber-900/40",
-      glow: "amber"
+      color: "#f9fa4c"
     },
     {
       title: "Mobiele Optimalisatie",
       description: "Perfect responsive ontwerp voor alle apparaten, met speciale aandacht voor de mobiele checkout ervaring waar het meeste omzetverlies plaatsvindt.",
       icon: <FaMobileAlt className="text-xl" />,
-      color: "from-sky-500 to-cyan-700",
-      lightBg: "bg-sky-50",
-      darkBg: "bg-sky-900/40",
-      glow: "sky"
+      color: "#4cfea6"
     },
     {
       title: "Veilige Transacties",
       description: "Geavanceerde beveiligingsmaatregelen zoals SSL-certificaten, PCI-compliance en bescherming tegen fraude om het vertrouwen van klanten te waarborgen.",
       icon: <FaShieldAlt className="text-xl" />,
-      color: "from-red-500 to-rose-700",
-      lightBg: "bg-red-50",
-      darkBg: "bg-red-900/40",
-      glow: "red"
-    },
-    {
-      title: "Intelligente Aanbevelingen",
-      description: "Slimme product-aanbevelingsengine die automatisch gerelateerde producten en cross/up-selling mogelijkheden toont om de gemiddelde orderwaarde te verhogen.",
-      icon: <FaRegLightbulb className="text-xl" />,
-      color: "from-fuchsia-500 to-pink-700",
-      lightBg: "bg-fuchsia-50",
-      darkBg: "bg-fuchsia-900/40",
-      glow: "fuchsia"
-    },
-    {
-      title: "Inzichtelijke Analytics",
-      description: "Gedetailleerde e-commerce analyses en dashboards die real-time inzicht bieden in verkooptrends, klantengedrag en conversiegegevens.",
-      icon: <FaChartLine className="text-xl" />,
-      color: "from-teal-500 to-emerald-700",
-      lightBg: "bg-teal-50",
-      darkBg: "bg-teal-900/40",
-      glow: "teal"
+      color: "#54eff6"
     }
   ];
 
@@ -128,33 +91,6 @@ export const WebshopChecklist = () => {
               </svg>
             </motion.div>
           </div>
-          
-          <div className="absolute top-1/2 right-0 w-64 h-64 transform translate-x-1/2 -translate-y-1/2">
-            <motion.div 
-              animate={{ 
-                rotate: [0, -360],
-              }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 240,
-                ease: "linear"
-              }}
-            >
-              <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.15">
-                  <path d="M92.5 32.5C92.5 35.8137 89.8137 38.5 86.5 38.5C83.1863 38.5 80.5 35.8137 80.5 32.5C80.5 29.1863 83.1863 26.5 86.5 26.5C89.8137 26.5 92.5 29.1863 92.5 32.5Z" stroke="currentColor"/>
-                  <path d="M63.5 32.5C63.5 35.8137 60.8137 38.5 57.5 38.5C54.1863 38.5 51.5 35.8137 51.5 32.5C51.5 29.1863 54.1863 26.5 57.5 26.5C60.8137 26.5 63.5 29.1863 63.5 32.5Z" stroke="currentColor"/>
-                  <path d="M33.5 32.5C33.5 35.8137 30.8137 38.5 27.5 38.5C24.1863 38.5 21.5 35.8137 21.5 32.5C21.5 29.1863 24.1863 26.5 27.5 26.5C30.8137 26.5 33.5 29.1863 33.5 32.5Z" stroke="currentColor"/>
-                  <path d="M18.5 57.5C18.5 60.8137 15.8137 63.5 12.5 63.5C9.18629 63.5 6.5 60.8137 6.5 57.5C6.5 54.1863 9.18629 51.5 12.5 51.5C15.8137 51.5 18.5 54.1863 18.5 57.5Z" stroke="currentColor"/>
-                  <path d="M46.5 57.5C46.5 60.8137 43.8137 63.5 40.5 63.5C37.1863 63.5 34.5 60.8137 34.5 57.5C34.5 54.1863 37.1863 51.5 40.5 51.5C43.8137 51.5 46.5 54.1863 46.5 57.5Z" stroke="currentColor"/>
-                  <path d="M75.5 57.5C75.5 60.8137 72.8137 63.5 69.5 63.5C66.1863 63.5 63.5 60.8137 63.5 57.5C63.5 54.1863 66.1863 51.5 69.5 51.5C72.8137 51.5 75.5 54.1863 75.5 57.5Z" stroke="currentColor"/>
-                  <path d="M33.5 82.5C33.5 85.8137 30.8137 88.5 27.5 88.5C24.1863 88.5 21.5 85.8137 21.5 82.5C21.5 79.1863 24.1863 76.5 27.5 76.5C30.8137 76.5 33.5 79.1863 33.5 82.5Z" stroke="currentColor"/>
-                  <path d="M63.5 82.5C63.5 85.8137 60.8137 88.5 57.5 88.5C54.1863 88.5 51.5 85.8137 51.5 82.5C51.5 79.1863 54.1863 76.5 57.5 76.5C60.8137 76.5 63.5 79.1863 63.5 82.5Z" stroke="currentColor"/>
-                  <path d="M93.5 82.5C93.5 85.8137 90.8137 88.5 87.5 88.5C84.1863 88.5 81.5 85.8137 81.5 82.5C81.5 79.1863 84.1863 76.5 87.5 76.5C90.8137 76.5 93.5 79.1863 93.5 82.5Z" stroke="currentColor"/>
-                </g>
-              </svg>
-            </motion.div>
-          </div>
         </div>
       </div>
 
@@ -175,7 +111,7 @@ export const WebshopChecklist = () => {
             >
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center px-4 py-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300 rounded-full text-sm font-medium mb-4"
+                className="inline-flex items-center px-4 py-2 bg-[#54eff6]/20 dark:bg-[#54eff6]/20 text-[#54eff6] dark:text-[#54eff6] rounded-full text-sm font-medium mb-4"
               >
                 <motion.span
                   animate={{ rotate: [0, -10, 0, 10, 0] }}
@@ -194,10 +130,10 @@ export const WebshopChecklist = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-4xl lg:text-5xl font-bold mb-6 text-zinc-800 dark:text-white"
             >
-              Waarom onze <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 relative">
+              Waarom onze <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#54eff6] to-[#4cfea6] relative">
                 webshops
                 <motion.span 
-                  className="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"
+                  className="absolute bottom-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#54eff6] to-[#4cfea6] rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -226,7 +162,7 @@ export const WebshopChecklist = () => {
                 className="p-6 bg-white dark:bg-zinc-800 rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#54eff6] to-[#4cfea6] rounded-xl flex items-center justify-center flex-shrink-0">
                     <motion.div
                       animate={{ 
                         scale: [1, 1.2, 1]
@@ -248,7 +184,7 @@ export const WebshopChecklist = () => {
                       Getest & Bewezen
                     </div>
                     <p className="text-zinc-600 dark:text-zinc-300">
-                      Onze webshops genereren gemiddeld <span className="font-semibold text-green-600 dark:text-green-400">45% meer verkopen</span> en <span className="font-semibold text-green-600 dark:text-green-400">3x hogere ROI</span> dan conventionele e-commerce oplossingen.
+                      Onze webshops genereren gemiddeld <span className="font-semibold text-[#4cfea6] dark:text-[#4cfea6]">45% meer verkopen</span> en <span className="font-semibold text-[#4cfea6] dark:text-[#4cfea6]">3x hogere ROI</span> dan conventionele e-commerce oplossingen.
                     </p>
                   </div>
                 </div>
@@ -266,7 +202,7 @@ export const WebshopChecklist = () => {
                 className="absolute -right-4 -bottom-4 w-20 h-20 bg-gray-50 dark:bg-zinc-900 rounded-full flex items-center justify-center border border-gray-100 dark:border-zinc-700"
               >
                 {/* Decorative element */}
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full opacity-70"></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-[#54eff6] to-[#4cfea6] rounded-full opacity-70"></div>
               </motion.div>
             </motion.div>
             
@@ -279,7 +215,7 @@ export const WebshopChecklist = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-xl shadow-md hover:shadow-xl overflow-hidden"
+                  className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 font-medium rounded-xl shadow-md hover:shadow-xl overflow-hidden"
                 >
                   <motion.div 
                     className="absolute inset-0 bg-white dark:bg-zinc-900 opacity-0 group-hover:opacity-10"
@@ -325,13 +261,13 @@ export const WebshopChecklist = () => {
                     whileHover={{ y: -5 }}
                     className={`p-6 rounded-2xl border border-gray-200 dark:border-zinc-700 relative overflow-hidden transition-all duration-300 
                       ${hoveredIndex === index 
-                      ? `shadow-lg bg-gradient-to-br ${benefit.lightBg} dark:bg-zinc-800` 
+                      ? `shadow-lg bg-[${benefit.color}]/10 dark:bg-zinc-800` 
                       : 'bg-white dark:bg-zinc-800'}`}
                   >
                     {/* Content */}
                     <div className="relative z-10">
                       <div className="flex mb-4 relative">
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${benefit.color}`}>
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center bg-[${benefit.color}]`}>
                           {/* Pulsing animation for icon background */}
                           <motion.div
                             animate={{ 
@@ -345,7 +281,7 @@ export const WebshopChecklist = () => {
                             }}
                             className="absolute inset-0 rounded-xl bg-white dark:bg-zinc-800 opacity-0 group-hover:opacity-30"
                           />
-                          <span className="text-white">{benefit.icon}</span>
+                          <span className="text-zinc-800">{benefit.icon}</span>
                         </div>
                         
                         {/* Numbered badge */}
@@ -358,12 +294,12 @@ export const WebshopChecklist = () => {
                         {benefit.title}
                       </h3>
                       
-                      <p className={`text-zinc-600 dark:text-zinc-300 ${hoveredIndex === index ? 'text-indigo-900 dark:text-zinc-100' : ''}`}>
+                      <p className="text-zinc-600 dark:text-zinc-300">
                         {benefit.description}
                       </p>
                     </div>
                     
-                    {/* Hover background effect with fixed dark mode contrast */}
+                    {/* Hover background effect */}
                     {hoveredIndex === index && (
                       <>
                         <motion.div
@@ -371,8 +307,7 @@ export const WebshopChecklist = () => {
                           animate={{ opacity: 1 }}
                           className="absolute inset-0 -z-10"
                         >
-                          <div className={`absolute inset-0 ${benefit.lightBg} opacity-90 dark:opacity-0`}></div>
-                          <div className={`absolute inset-0 ${benefit.darkBg} opacity-0 dark:opacity-100`}></div>
+                          <div className={`absolute inset-0 bg-[${benefit.color}]/10 opacity-90 dark:opacity-30`}></div>
                         </motion.div>
                         
                         {/* Subtle animated glow effect */}
@@ -386,7 +321,8 @@ export const WebshopChecklist = () => {
                             duration: 2,
                             ease: "easeInOut" 
                           }}
-                          className={`absolute -bottom-2 -right-2 w-24 h-24 rounded-full bg-${benefit.glow}-500 blur-xl opacity-20 dark:opacity-15 -z-10`}
+                          style={{ backgroundColor: benefit.color }}
+                          className={`absolute -bottom-2 -right-2 w-24 h-24 rounded-full blur-xl opacity-20 dark:opacity-15 -z-10`}
                         />
                       </>
                     )}
@@ -399,7 +335,7 @@ export const WebshopChecklist = () => {
                         scale: hoveredIndex === index ? 1 : 0 
                       }}
                       transition={{ type: "spring", stiffness: 500, damping: 15 }}
-                      className="absolute top-4 right-4 w-5 h-5 text-green-500 dark:text-green-400"
+                      className="absolute top-4 right-4 w-5 h-5 text-[#4cfea6] dark:text-[#4cfea6]"
                     >
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -419,11 +355,11 @@ export const WebshopChecklist = () => {
             >
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="px-4 py-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-xl text-white flex items-center gap-2 shadow-lg"
+                className="px-4 py-3 bg-[#f9fa4c] rounded-xl text-zinc-800 flex items-center gap-2 shadow-lg"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <span className="font-medium">De meest conversie-gerichte webshops van Nederland</span>
               </motion.div>

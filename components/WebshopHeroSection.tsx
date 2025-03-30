@@ -61,7 +61,7 @@ export const WebshopHeroSection = () => {
   };
 
   return (
-    <section ref={ref} className="relative overflow-hidden bg-gradient-to-b from-white via-indigo-50/30 to-white dark:from-zinc-900 dark:via-indigo-950/20 dark:to-zinc-900 pt-20 pb-24">
+    <section ref={ref} className="relative overflow-hidden bg-gradient-to-b from-white via-[#54eff6]/10 to-white dark:from-zinc-900 dark:via-[#54eff6]/5 dark:to-zinc-900 pt-20 pb-24">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated circles */}
@@ -69,13 +69,13 @@ export const WebshopHeroSection = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.4, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="absolute top-20 left-10 w-72 h-72 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-72 h-72 bg-[#54eff6]/20 dark:bg-[#54eff6]/10 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.4, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-300/20 dark:bg-blue-500/10 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-[#4cfea6]/20 dark:bg-[#4cfea6]/10 rounded-full blur-3xl"
         />
         
         {/* Grid pattern */}
@@ -85,7 +85,7 @@ export const WebshopHeroSection = () => {
         <div className="absolute top-1/4 left-10">
           <motion.div
             animate={floatingAnimation}
-            className="w-6 h-6 bg-indigo-500 rounded-full opacity-20"
+            className="w-6 h-6 bg-[#54eff6] rounded-full opacity-20"
           />
         </div>
         <div className="absolute bottom-1/3 right-20">
@@ -94,7 +94,7 @@ export const WebshopHeroSection = () => {
               ...floatingAnimation,
               transition: { ...floatingAnimation.transition, delay: 1 }
             }}
-            className="w-8 h-8 bg-blue-500 rounded-full opacity-20"
+            className="w-8 h-8 bg-[#4cfea6] rounded-full opacity-20"
           />
         </div>
         <div className="absolute top-1/2 left-1/4">
@@ -103,7 +103,7 @@ export const WebshopHeroSection = () => {
               ...floatingAnimation,
               transition: { ...floatingAnimation.transition, delay: 2 }
             }}
-            className="w-4 h-4 bg-purple-500 rounded-full opacity-20"
+            className="w-4 h-4 bg-[#f9fa4c] rounded-full opacity-20"
           />
         </div>
         
@@ -124,9 +124,9 @@ export const WebshopHeroSection = () => {
                 repeat: Infinity,
                 ease: "easeInOut" 
               }}
-              className="relative w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg"
+              className="relative w-16 h-16 bg-gradient-to-br from-[#54eff6] to-[#4cfea6] rounded-full flex items-center justify-center shadow-lg"
             >
-              <FaShoppingCart className="text-white text-2xl" />
+              <FaShoppingCart className="text-zinc-800 text-2xl" />
               <motion.div
                 animate={{ 
                   scale: [1, 1.2, 1],
@@ -137,7 +137,7 @@ export const WebshopHeroSection = () => {
                   repeat: Infinity,
                   ease: "easeInOut" 
                 }}
-                className="absolute inset-0 rounded-full bg-indigo-400 -z-10 opacity-40 blur-sm"
+                className="absolute inset-0 rounded-full bg-[#54eff6] -z-10 opacity-40 blur-sm"
               />
             </motion.div>
           </motion.div>
@@ -156,7 +156,7 @@ export const WebshopHeroSection = () => {
               }}
               className="inline-block mb-4"
             >
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs uppercase font-bold py-1.5 px-3 rounded-full tracking-wider shadow-md">
+              <span className="bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 text-xs uppercase font-bold py-1.5 px-3 rounded-full tracking-wider shadow-md">
                 Next-Gen E-commerce
               </span>
             </motion.div>
@@ -192,7 +192,7 @@ export const WebshopHeroSection = () => {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
                 }}
               >
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Die Verkopen </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#54eff6] to-[#4cfea6]">Die Verkopen </span>
                 <motion.span
                   animate={{ 
                     rotate: [0, 10, 0, -10, 0],
@@ -222,7 +222,7 @@ export const WebshopHeroSection = () => {
                   className="bg-white/70 dark:bg-zinc-800/70 backdrop-blur-sm p-4 rounded-xl border border-gray-200 dark:border-zinc-700 shadow-lg"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-full text-indigo-600 dark:text-indigo-400">
+                    <div className="p-2 bg-[#54eff6]/20 dark:bg-[#54eff6]/20 rounded-full text-[#54eff6] dark:text-[#54eff6]">
                       {features[currentFeature].icon}
                     </div>
                     <div className="text-left">
@@ -261,7 +261,7 @@ export const WebshopHeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 group"
+                className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 font-medium shadow-lg shadow-[#54eff6]/25 flex items-center justify-center gap-2 group"
               >
                 <span>Gratis Adviesgesprek</span>
                 <motion.div
@@ -279,7 +279,7 @@ export const WebshopHeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 rounded-xl border border-indigo-200 dark:border-indigo-800/50 hover:border-indigo-300 dark:hover:border-indigo-700 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm text-indigo-600 dark:text-indigo-400 font-medium shadow-md"
+                className="px-8 py-4 rounded-xl border border-[#54eff6]/20 dark:border-[#54eff6]/20 hover:border-[#54eff6]/50 dark:hover:border-[#54eff6]/50 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm text-[#54eff6] dark:text-[#54eff6] font-medium shadow-md"
               >
                 Bekijk Portfolio
               </motion.button>
@@ -295,15 +295,15 @@ export const WebshopHeroSection = () => {
               className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
             >
               <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <FaCheckCircle className="text-green-500" />
+                <FaCheckCircle className="text-[#4cfea6]" />
                 <span>30+ Webshops Gelanceerd</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <FaCheckCircle className="text-green-500" />
+                <FaCheckCircle className="text-[#4cfea6]" />
                 <span>Gemiddeld 45% Meer Verkopen</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <FaCheckCircle className="text-green-500" />
+                <FaCheckCircle className="text-[#4cfea6]" />
                 <span>7-14 Dagen Oplevering</span>
               </div>
             </motion.div>
@@ -396,10 +396,10 @@ export const WebshopHeroSection = () => {
                           repeat: Infinity,
                           ease: "easeInOut" 
                         }}
-                        className="bg-indigo-600 text-white p-4 rounded-lg shadow-lg"
+                        className="bg-gradient-to-r from-[#54eff6] to-[#4cfea6] text-zinc-800 p-4 rounded-lg shadow-lg"
                       >
                         <div className="text-sm font-medium mb-1">Nieuwe bestelling! 🎉</div>
-                        <div className="text-xs text-indigo-200">€149,99 zojuist ontvangen</div>
+                        <div className="text-xs opacity-80">€149,99 zojuist ontvangen</div>
                       </motion.div>
                     </motion.div>
                     
@@ -427,7 +427,7 @@ export const WebshopHeroSection = () => {
                         }}
                         className="w-6 h-6 pointer-events-none"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-indigo-600 dark:text-indigo-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#54eff6] dark:text-[#54eff6]">
                           <path d="M4 4l7.07 17 2.51-7.39L21 11.07z"></path>
                         </svg>
                       </motion.div>
@@ -465,14 +465,14 @@ export const WebshopHeroSection = () => {
                     className="bg-white dark:bg-zinc-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-zinc-700"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-full">
-                        <FaChartLine className="text-green-600 dark:text-green-400" />
+                      <div className="p-2 bg-[#f9fa4c]/20 dark:bg-[#f9fa4c]/10 rounded-full">
+                        <FaChartLine className="text-[#f9fa4c] dark:text-[#f9fa4c]" />
                       </div>
                       <div>
                         <div className="text-sm font-medium text-zinc-800 dark:text-white">
                           Omzet Stijging
                         </div>
-                        <div className="text-xl font-bold text-green-600 dark:text-green-400">
+                        <div className="text-xl font-bold text-[#f9fa4c] dark:text-[#f9fa4c]">
                           +168%
                         </div>
                       </div>

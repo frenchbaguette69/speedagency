@@ -7,7 +7,6 @@ import {
   FaMinus, 
   FaRegLightbulb, 
   FaSearch, 
-  FaClock, 
   FaCode, 
   FaCreditCard, 
   FaShoppingCart, 
@@ -133,10 +132,10 @@ export const WebshopFAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-indigo-50/30 dark:from-zinc-900 dark:to-indigo-950/20 overflow-hidden relative">
+    <section className="py-20 bg-gradient-to-b from-white to-[#54eff6]/5 dark:from-zinc-900 dark:to-[#54eff6]/10 overflow-hidden relative">
       {/* Background decorative elements */}
-      <div className="absolute top-40 left-0 w-64 h-64 bg-indigo-300 dark:bg-indigo-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 dark:opacity-40"></div>
-      <div className="absolute top-80 right-0 w-72 h-72 bg-blue-300 dark:bg-blue-900/40 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 dark:opacity-40"></div>
+      <div className="absolute top-40 left-0 w-64 h-64 bg-[#54eff6]/30 dark:bg-[#54eff6]/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 dark:opacity-40"></div>
+      <div className="absolute top-80 right-0 w-72 h-72 bg-[#4cfea6]/30 dark:bg-[#4cfea6]/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-3xl opacity-30 dark:opacity-40"></div>
 
       <div className="container mx-auto max-w-7xl px-5 relative z-10">
         {/* Animated header */}
@@ -171,16 +170,16 @@ export const WebshopFAQ = () => {
                     duration: 3,
                     ease: "easeInOut" 
                   }}
-                  className="absolute inset-0 rounded-full bg-indigo-200 dark:bg-indigo-500/20"
+                  className="absolute inset-0 rounded-full bg-[#54eff6]/20 dark:bg-[#54eff6]/20"
                 />
-                <div className="relative p-4 bg-white dark:bg-indigo-900 rounded-full shadow-lg">
-                  <FaShoppingCart className="text-2xl text-indigo-600 dark:text-indigo-300" />
+                <div className="relative p-4 bg-white dark:bg-zinc-800 rounded-full shadow-lg">
+                  <FaShoppingCart className="text-2xl text-[#54eff6] dark:text-[#54eff6]" />
                 </div>
               </div>
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-900 dark:text-white">
-              Veelgestelde <span className="text-indigo-600 dark:text-indigo-400">Webshop Vragen</span>
+              Veelgestelde <span className="text-[#54eff6] dark:text-[#54eff6]">Webshop Vragen</span>
             </h2>
             <p className="text-lg text-zinc-700 dark:text-gray-200 max-w-3xl mx-auto">
               Alles wat u moet weten over onze webshop ontwikkeling, functionaliteiten en service.
@@ -205,7 +204,7 @@ export const WebshopFAQ = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-5 py-3.5 rounded-xl flex items-center gap-2.5 text-sm md:text-base font-medium transition-all ${
                   activeCategory === category.id
-                    ? "bg-indigo-600 text-white shadow-lg" 
+                    ? "bg-[#54eff6] text-zinc-800 shadow-lg" 
                     : "bg-white dark:bg-zinc-700 text-zinc-800 dark:text-white hover:bg-gray-50 dark:hover:bg-zinc-600 shadow-sm border border-gray-100 dark:border-zinc-600"
                 }`}
               >
@@ -213,7 +212,7 @@ export const WebshopFAQ = () => {
                 {category.label}
                 <span className={`px-2.5 py-1 text-xs rounded-full ${
                   activeCategory === category.id
-                    ? "bg-white/20 text-white" 
+                    ? "bg-white/20 text-zinc-800" 
                     : "bg-gray-100 dark:bg-zinc-600 text-zinc-700 dark:text-zinc-200"
                 }`}>
                   {getCategoryCount(category.id)}
@@ -245,7 +244,7 @@ export const WebshopFAQ = () => {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className={`rounded-2xl overflow-hidden ${
                       isOpen 
-                        ? "shadow-xl ring-1 ring-indigo-200 dark:ring-indigo-500/30" 
+                        ? "shadow-xl ring-1 ring-[#54eff6]/30 dark:ring-[#54eff6]/30" 
                         : "shadow-md hover:shadow-lg transition-shadow"
                     }`}
                   >
@@ -256,19 +255,19 @@ export const WebshopFAQ = () => {
                         isOpen 
                           ? "bg-white dark:bg-zinc-800" 
                           : isHighlighted 
-                            ? "bg-gradient-to-r from-indigo-50 to-white dark:from-indigo-900/20 dark:to-zinc-800" 
+                            ? "bg-gradient-to-r from-[#54eff6]/10 to-white dark:from-[#54eff6]/10 dark:to-zinc-800" 
                             : "bg-white dark:bg-zinc-800"
                       }`}
                     >
                       <div className="flex items-center gap-4">
                         {isHighlighted && (
-                          <span className="inline-flex items-center justify-center shrink-0 w-10 h-10 bg-indigo-100 dark:bg-indigo-900 rounded-full text-indigo-600 dark:text-indigo-300">
+                          <span className="inline-flex items-center justify-center shrink-0 w-10 h-10 bg-[#54eff6]/20 dark:bg-[#54eff6]/20 rounded-full text-[#54eff6] dark:text-[#54eff6]">
                             <FaRegLightbulb />
                           </span>
                         )}
                         <h3 className={`text-lg md:text-xl font-medium ${
                           isOpen 
-                            ? "text-indigo-600 dark:text-indigo-300" 
+                            ? "text-[#54eff6] dark:text-[#54eff6]" 
                             : "text-zinc-800 dark:text-white"
                         }`}>
                           {faq.question}
@@ -276,7 +275,7 @@ export const WebshopFAQ = () => {
                       </div>
                       <div className={`flex-shrink-0 ml-4 w-8 h-8 flex items-center justify-center rounded-full ${
                         isOpen 
-                          ? "bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300" 
+                          ? "bg-[#54eff6]/20 dark:bg-[#54eff6]/20 text-[#54eff6] dark:text-[#54eff6]" 
                           : "bg-gray-100 dark:bg-zinc-700 text-zinc-500 dark:text-white"
                       }`}>
                         {isOpen ? <FaMinus /> : <FaPlus />}
@@ -341,11 +340,11 @@ export const WebshopFAQ = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-16 text-center relative z-10"
         >
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 md:p-10 shadow-xl max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-white">
+          <div className="bg-gradient-to-r from-[#54eff6] to-[#4cfea6] rounded-2xl p-8 md:p-10 shadow-xl max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4 text-zinc-800">
               Klaar om uw webshop project te bespreken?
             </h3>
-            <p className="text-indigo-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-zinc-700 mb-8 max-w-2xl mx-auto">
               Laat ons u helpen uw e-commerce doelen te realiseren met een webshop die écht verkoopt. 
               Vraag een vrijblijvend adviesgesprek aan.
             </p>
@@ -354,7 +353,7 @@ export const WebshopFAQ = () => {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-600 font-medium shadow-lg inline-flex items-center justify-center gap-2"
+                className="px-8 py-3.5 rounded-xl bg-white hover:bg-gray-50 text-zinc-800 font-medium shadow-lg inline-flex items-center justify-center gap-2"
               >
                 Gratis adviesgesprek
               </motion.a>
@@ -362,7 +361,7 @@ export const WebshopFAQ = () => {
                 href="tel:+31612345678"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3.5 rounded-xl bg-indigo-500/30 hover:bg-indigo-500/40 text-white border border-indigo-400 hover:border-white font-medium inline-flex items-center justify-center gap-2"
+                className="px-8 py-3.5 rounded-xl bg-[#f9fa4c]/90 hover:bg-[#f9fa4c] text-zinc-800 border border-[#f9fa4c]/70 hover:border-[#f9fa4c] font-medium inline-flex items-center justify-center gap-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
